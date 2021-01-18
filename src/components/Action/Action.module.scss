@@ -1,0 +1,16 @@
+.Action {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #D8D8D8;
+  background-color: #FFF;
+  border-radius: 80px;
+
+  .yes {
+    margin-top: 8px;
+  }
+
+  &:active, &:focus {
+    outline: none;
+    background-color: #FAFAFA;
+  }
+}

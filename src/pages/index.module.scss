@@ -1,0 +1,16 @@
+.Index {
+  text-align: center;
+
+  .welcomeMessage {
+    text-transform: uppercase;
+    font-family: "Futura Next DemiBold", serif;
+    font-size: 18px;
+    margin-top: calc(100vh * .17);
+  }
+
+  .welcomeMessageBig {
+    margin-top: 10px;
+    font-size: 36px;
+    display: block;
+  }
+}

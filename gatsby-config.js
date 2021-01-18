@@ -1,25 +1,27 @@
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
-    title: "tindev",
+    title: 'tindev',
   },
   plugins: [
-    "gatsby-plugin-sass",
+    'gatsby-plugin-sass',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "G-M6FQ2Q8TEJ",
+        trackingId: 'G-M6FQ2Q8TEJ',
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: path.join(__dirname, `src`, `images`),
       },
-      __key: "images",
+      __key: 'images',
     },
   ],
 };

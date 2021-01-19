@@ -5,13 +5,18 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   text-align: center;
+  background-color: #FFFFFF;
+  will-change: transform;
 
   .image {
     margin-top: 6vh;
+    height: 35vh;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .description {
-    margin-top: 6vh;
+    margin-top: 3vh;
     text-transform: uppercase;
   }
 

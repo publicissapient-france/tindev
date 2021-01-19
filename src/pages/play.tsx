@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Header2 } from '../components/Header/Header2';
-import { Card } from '../components/Card/Card';
+import { Deck } from '../components/Deck/Deck';
 
 export default function () {
   return (
     <>
       <Header2/>
-      <Card/>
+      <Deck/>
     </>
   );
 }

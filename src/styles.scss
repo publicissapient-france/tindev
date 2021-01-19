@@ -1,7 +1,13 @@
-body {
+html, body {
   font-family: "Futura Next Book", serif;
-  padding: 0;
   box-sizing: border-box;
-  margin: auto;
   font-size: 14px;
+  overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  position: fixed;
+  overflow: hidden;
 }

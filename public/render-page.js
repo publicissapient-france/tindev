@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("/Users/blacroix/Dev/PS/tindev/node_modules/lodash/merge.js"), (function webpackLoadOptionalExternalModule() { try { return require("path"); } catch(e) {} }()), require("react"), require("react-dom/server"), require("react-helmet"));
+		module.exports = factory(require("/Users/stephane/Workspace/tindev/node_modules/lodash/merge.js"), (function webpackLoadOptionalExternalModule() { try { return require("path"); } catch(e) {} }()), require("react"), require("react-dom/server"), require("react-helmet"));
 	else if(typeof define === 'function' && define.amd)
-		define("lib", ["/Users/blacroix/Dev/PS/tindev/node_modules/lodash/merge.js", "path", "react", "react-dom/server", "react-helmet"], factory);
+		define("lib", ["/Users/stephane/Workspace/tindev/node_modules/lodash/merge.js", "path", "react", "react-dom/server", "react-helmet"], factory);
 	else if(typeof exports === 'object')
-		exports["lib"] = factory(require("/Users/blacroix/Dev/PS/tindev/node_modules/lodash/merge.js"), (function webpackLoadOptionalExternalModule() { try { return require("path"); } catch(e) {} }()), require("react"), require("react-dom/server"), require("react-helmet"));
+		exports["lib"] = factory(require("/Users/stephane/Workspace/tindev/node_modules/lodash/merge.js"), (function webpackLoadOptionalExternalModule() { try { return require("path"); } catch(e) {} }()), require("react"), require("react-dom/server"), require("react-helmet"));
 	else
-		root["lib"] = factory(root["/Users/blacroix/Dev/PS/tindev/node_modules/lodash/merge.js"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"]);
+		root["lib"] = factory(root["/Users/stephane/Workspace/tindev/node_modules/lodash/merge.js"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_path__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -4322,9 +4322,9 @@ if (false) {} else {
 /***/ }),
 
 /***/ "lodash/merge":
-/*!*****************************************************************************!*\
-  !*** external "/Users/blacroix/Dev/PS/tindev/node_modules/lodash/merge.js" ***!
-  \*****************************************************************************/
+/*!********************************************************************************!*\
+  !*** external "/Users/stephane/Workspace/tindev/node_modules/lodash/merge.js" ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

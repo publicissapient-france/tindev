@@ -7,8 +7,7 @@ import { Card } from '../Card/Card';
 
 const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
-
-const trans = (r, s) => `perspective(0px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
+const trans = (r, s) => `rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
 const cards = [
   {},
@@ -25,7 +24,9 @@ const cards = [
 
 export const Deck = () => {
   const [gone] = useState(() => new Set());
+
   const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from() }));
+
   const bind = useGesture(({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
     const trigger = velocity > .2;
     const dir = xDir < 0 ? -1 : 1;
@@ -45,30 +46,30 @@ export const Deck = () => {
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } };
     });
   });
+
+  const swipeOut = (index: number, dir: number) => i => {
+    if (index !== i) return;
+    gone.add(index);
+    const x = (200 + window.innerWidth) * dir;
+    const rot = 30;
+    const scale = 1.1;
+    return { x, rot, scale, delay: undefined, config: { friction: 50, tension: 200 } };
+  };
+
+  const isOnClick = (index, down: boolean, velocity: number) => !gone.has(index) && down && velocity === 0;
+
   const yesBind = useGesture(({ args: [index], down, velocity }) => {
-    if (down && velocity === 0) {
-      gone.add(index);
-      set(i => {
-        if (index !== i) return;
-        const x = (200 + window.innerWidth);
-        const rot = 30;
-        const scale = 1.1;
-        return { x, rot, scale, delay: undefined, config: { friction: 50, tension: 200 } };
-      });
+    if (isOnClick(index, down, velocity)) {
+      set(swipeOut(index, 1));
     }
   });
+
   const noBind = useGesture(({ args: [index], down, velocity }) => {
-    if (down && velocity === 0) {
-      gone.add(index);
-      set(i => {
-        if (index !== i) return;
-        const x = (200 + window.innerWidth) * -1;
-        const rot = -30;
-        const scale = 1.1;
-        return { x, rot, scale, delay: undefined, config: { friction: 50, tension: 200 } };
-      });
+    if (isOnClick(index, down, velocity)) {
+      set(swipeOut(index, -1));
     }
   });
+
   return (
     <div className="Deck">
       {props.map(({ x, y, rot, scale }, i) => (

@@ -1,9 +1,10 @@
-import * as React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery } from 'gatsby';
+import * as React from 'react';
 
+import { DataItem } from './data.model';
 import buildDataset from './utils/buildDataset';
 
-export default (Component) => () => (
+export default (Component: React.FunctionComponent<{ data: DataItem[] }>) => () => (
   <StaticQuery
     query={graphql`
       query AllData {

@@ -1,5 +1,7 @@
-import * as React from "react";
-import { Swipeable, direction } from "react-deck-swiper";
+import * as React from 'react';
+import { direction, Swipeable } from 'react-deck-swiper';
+
+import { DataItem } from '../../data/data.model';
 
 const container = {
   marginTop: "96px",
@@ -17,7 +19,7 @@ const card = {
   userSelect: "none",
 };
 
-const Playground = ({ data }) => {
+const Playground = ({ data }: { data: DataItem[] }) => {
   const [count, setCount] = React.useState(0);
   const [index, setIndex] = React.useState(0);
 
@@ -29,7 +31,7 @@ const Playground = ({ data }) => {
     );
   }
 
-  const handleOnSwipe = (swipeDirection) => {
+  const handleOnSwipe = (swipeDirection: direction) => {
     const { important, response } = data[index];
     if (
       important &&

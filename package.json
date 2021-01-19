@@ -21,6 +21,7 @@
     "gatsby-plugin-sass": "^3.0.0",
     "gatsby-plugin-sharp": "^2.12.2",
     "gatsby-source-filesystem": "^2.9.1",
+    "gatsby-transformer-csv": "^2.8.0",
     "gatsby-transformer-sharp": "^2.10.1",
     "react": "^16.13.1",
     "react-deck-swiper": "^1.0.9",

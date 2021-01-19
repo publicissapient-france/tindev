@@ -1,0 +1,19 @@
+@import "../../colors";
+
+.Button {
+  background-color: $primary;
+  padding: 0;
+  border: none;
+  color: #FFF;
+  width: 80vw;
+  height: 47px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-family: "Futura Next DemiBold", serif;
+  border-radius: 47px;
+
+  &:active, &:hover, &:focus {
+    background-color: darken($primary, 5%);
+    outline: none;
+  }
+}

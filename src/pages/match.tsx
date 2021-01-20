@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Header2 } from '../components/Header/Header2';
 import effectImg from '../images/effect.svg';
 import heartImg from '../images/heart.svg';
 import matchStyles from './match.module.scss';
+import { Header } from '../components/Header/Header';
 
 const Match = () => (
   <>
-    <Header2/>
+    <Header background={false}/>
     <div className={matchStyles.Match}>
       <img src={effectImg} alt=""/>
       <p className={matchStyles.message}>it's a <span>match</span></p>

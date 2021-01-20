@@ -1,10 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import cardStyles from './Card.module.scss';
 import image from '../../images/card-image.svg';
 import { Action, ActionType } from '../Action/Action';
 import { animated } from 'react-spring';
+import { ReactEventHandlers } from 'react-use-gesture/dist/types';
 
-export const Card = ({ onYes, onNo }) => (
+type Props = { onYes: ReactEventHandlers, onNo: ReactEventHandlers };
+
+export const Card = ({ onYes, onNo }: Props) => (
   <div className={cardStyles.Card}>
     <div className={cardStyles.image} style={{ backgroundImage: `url(${image})` }}/>
     <p className={cardStyles.description}>la qualité sans compromis ?</p>

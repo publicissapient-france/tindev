@@ -1,13 +1,12 @@
-html, body {
-  font-family: "Futura Next Book", serif;
-  box-sizing: border-box;
-  font-size: 14px;
-  overscroll-behavior-y: contain;
+body {
+  overflow: auto;
   margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+  font-family: "Futura Next Book", serif;
+  font-size: 14px;
   user-select: none;
-  position: fixed;
-  overflow: hidden;
+  background: url("./images/background.png") center top repeat;
+}
+
+html, body {
+  height: 100vh;
 }

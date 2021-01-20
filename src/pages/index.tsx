@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 export default function IndexRoute() {
   return (
     <div className={indexStyles.Index}>
-      <Header/>
+      <Header background={true}/>
       <div className={indexStyles.welcomeMessage}>
         Découvrez si vous êtes<br/>notre prochain
         <span className={indexStyles.welcomeMessageBig}>match !</span>

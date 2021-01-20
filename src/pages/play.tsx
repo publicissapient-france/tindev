@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Header2 } from '../components/Header/Header2';
+import { Header } from '../components/Header/Header';
 import { Deck } from '../components/Deck/Deck';
 
 export default function () {
   return (
     <>
-      <Header2/>
+      <Header background={false}/>
       <Deck/>
     </>
   );

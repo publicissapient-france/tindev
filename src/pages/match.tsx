@@ -7,7 +7,7 @@ import { Header } from '../components/Header/Header';
 const Match = () => (
   <>
     <Header background={false}/>
-    <div className={matchStyles.Match}>
+    <div className={matchStyles.match}>
       <img src={effectImg} alt=""/>
       <p className={matchStyles.message}>it's a <span>match</span></p>
       <img className={matchStyles.heart} src={heartImg} alt="coeur"/>

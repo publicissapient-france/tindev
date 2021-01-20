@@ -1,7 +1,9 @@
+// Based on: https://codesandbox.io/s/fduch?file=/src/index.js
+
 import * as React from 'react';
-import { animated, interpolate, useSprings } from 'react-spring';
+import { animated, to as interpolate, useSprings } from 'react-spring';
 import { useState } from 'react';
-import { useGesture } from 'react-use-gesture';
+import { useDrag } from 'react-use-gesture';
 import './Deck.scss';
 import { Card } from '../Card/Card';
 
@@ -25,9 +27,15 @@ const cards = [
 export const Deck = () => {
   const [gone] = useState(() => new Set());
 
-  const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from() }));
+  const [springs, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from() }));
 
-  const bind = useGesture(({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
+  const bind = useDrag(({
+                          args: [index],
+                          down,
+                          movement: [mx],
+                          direction: [xDir],
+                          velocity
+                        }) => {
     const trigger = velocity > .2;
     const dir = xDir < 0 ? -1 : 1;
     const isGone = gone.has(index);
@@ -40,12 +48,12 @@ export const Deck = () => {
     set(i => {
       if (index !== i) return;
       const isGone = gone.has(index);
-      const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0;
-      const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
+      const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0;
+      const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0);
       const scale = down ? 1.1 : 1;
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } };
     });
-  });
+  }, { filterTaps: true });
 
   const swipeOut = (index: number, dir: number) => i => {
     if (index !== i) return;
@@ -58,13 +66,13 @@ export const Deck = () => {
 
   const isOnClick = (index, down: boolean, velocity: number) => !gone.has(index) && down && velocity === 0;
 
-  const yesBind = useGesture(({ args: [index], down, velocity }) => {
+  const yesBind = useDrag(({ args: [index], down, velocity }) => {
     if (isOnClick(index, down, velocity)) {
       set(swipeOut(index, 1));
     }
   });
 
-  const noBind = useGesture(({ args: [index], down, velocity }) => {
+  const noBind = useDrag(({ args: [index], down, velocity }) => {
     if (isOnClick(index, down, velocity)) {
       set(swipeOut(index, -1));
     }
@@ -72,7 +80,7 @@ export const Deck = () => {
 
   return (
     <div className="Deck">
-      {props.map(({ x, y, rot, scale }, i) => (
+      {springs.map(({ x, y, rot, scale }, i) => (
         <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
           <animated.div {...bind(i)}
                         style={{

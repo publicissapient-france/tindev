@@ -4,6 +4,7 @@ import indexStyles from './index.module.scss';
 import { Header } from '../components/Header/Header';
 import { Button } from '../components/Button/Button';
 import { Link } from 'gatsby';
+import { Footer } from '../components/Footer/Footer';
 
 export default function IndexRoute() {
   return (
@@ -16,6 +17,7 @@ export default function IndexRoute() {
       <Link to={'/play'}>
         <Button>c'est parti !</Button>
       </Link>
+      <Footer isDark/>
     </div>
   );
 }

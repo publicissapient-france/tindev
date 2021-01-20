@@ -1,3 +1,5 @@
+@import "../../styles/colors";
+
 .header {
   padding-bottom: 60px;
 }
@@ -21,7 +23,7 @@
   background-position-y: bottom;
 
   .container {
-    background-color: #FFA1C3;
+    background-color: $primary;
   }
 
   .tagline {
@@ -35,6 +37,6 @@
   }
 
   .headerAlt {
-    background-color: #FFA1C3;
+    background-color: $primary;
   }
 }

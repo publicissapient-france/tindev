@@ -1,16 +1,34 @@
-.Index {
+.index {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header" "main";
   text-align: center;
+}
 
-  .welcomeMessage {
-    text-transform: uppercase;
-    font-family: "Futura Next DemiBold", serif;
-    font-size: 18px;
-    margin-top: calc(100vh * .17);
-  }
+.header {
+  grid-area: header;
+}
 
-  .welcomeMessageBig {
-    margin-top: 10px;
-    font-size: 36px;
-    display: block;
-  }
+.main {
+  grid-area: main;
+  display: flex;
+}
+
+.content {
+  margin: auto;
+  padding: 60px 0;
+}
+
+.welcome {
+  text-transform: uppercase;
+  font-family: "Futura Next DemiBold", serif;
+  font-size: 18px;
+}
+
+.welcomeBig {
+  display: block;
+  margin-top: 10px;
+  font-size: 36px;
 }

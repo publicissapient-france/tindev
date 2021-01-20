@@ -7,15 +7,21 @@ import { Link } from 'gatsby';
 
 export default function IndexRoute() {
   return (
-    <div className={indexStyles.Index}>
-      <Header background={true}/>
-      <div className={indexStyles.welcomeMessage}>
-        Découvrez si vous êtes<br/>notre prochain
-        <span className={indexStyles.welcomeMessageBig}>match !</span>
+    <div className={indexStyles.index}>
+      <div className={indexStyles.header}>
+        <Header background={true}/>
       </div>
-      <Link to={'/play'}>
-        <Button>c'est parti !</Button>
-      </Link>
+      <main className={indexStyles.main}>
+        <div className={indexStyles.content}>
+          <div className={indexStyles.welcome}>
+            Découvrez si vous êtes<br/>notre prochain
+            <span className={indexStyles.welcomeBig}>match !</span>
+          </div>
+          <Link to={'/play'}>
+            <Button>c'est parti !</Button>
+          </Link>
+        </div>
+      </main>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { direction, Swipeable } from 'react-deck-swiper';
 
 import { DataItem } from '../../data/data.model';

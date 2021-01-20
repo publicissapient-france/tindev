@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styles from './Header.module.scss';
 import logoWhite from '../../images/logo-white.svg';
 import logoBlack from '../../images/logo-black.svg';

@@ -1,5 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby';
-import * as React from 'react';
+import React from 'react';
 
 import { DataItem } from './data.model';
 import buildDataset from './utils/buildDataset';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styles from './Header2.module.scss';
 import logo from '../../images/logo2.svg';
 

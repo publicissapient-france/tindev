@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import '../styles.scss';
 import indexStyles from './index.module.scss';
 import { Header } from '../components/Header/Header';

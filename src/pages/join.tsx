@@ -1,0 +1,16 @@
+import React from 'react';
+import { Header } from '../components/Header/Header';
+import { Button } from '../components/Button/Button';
+import styles from './join.module.scss';
+
+export default function JoinRoute() {
+  return (
+    <>
+      <Header/>
+      <div className={styles.Join}>
+        <p className={styles.message}>faisons connaissance&nbsp;!</p>
+        <Button>commencer à discuter</Button>
+      </div>
+    </>
+  );
+}

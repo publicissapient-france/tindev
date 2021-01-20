@@ -11,3 +11,6 @@ export default function () {
     </Layout>
   );
 }
+
+// <div className={styles.playBottom}/>
+// <Footer/>

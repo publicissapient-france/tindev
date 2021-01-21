@@ -4,6 +4,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { animated, to as interpolate, useSprings } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 
+import { DataItem } from '../../data/data.model';
 import { Card } from '../Card/Card';
 import deckStyles from './Deck.module.scss';
 
@@ -24,7 +25,11 @@ const cards = [
   {}
 ];
 
-export const Deck: FunctionComponent = () => {
+export interface DeckProps {
+  data: DataItem[];
+}
+
+export const Deck: FunctionComponent<DeckProps> = ({ data }) => {
   const [gone] = useState(() => new Set());
 
   const [springs, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from() }));
@@ -86,7 +91,7 @@ export const Deck: FunctionComponent = () => {
             style={{
               transform: interpolate([rot, scale], trans)
             }}>
-            <Card onYes={yesBind(i)} onNo={noBind(i)} />
+            <Card data={data[i]} onYes={yesBind(i)} onNo={noBind(i)} />
           </animated.div>
         </animated.div>
       ))}

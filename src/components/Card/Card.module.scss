@@ -1,4 +1,7 @@
 .card {
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 480px;
   padding: 4vh 8vw;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 15px;

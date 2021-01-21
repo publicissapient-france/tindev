@@ -1,7 +1,7 @@
 import { navigate } from 'gatsby';
 import React, { FunctionComponent, useEffect } from 'react';
 
-const NotFoundPage: React.FunctionComponent = () => {
+const NotFoundPage: FunctionComponent = () => {
   useEffect(() => {
     navigate('/'); // redirecting to home page
   }, []);

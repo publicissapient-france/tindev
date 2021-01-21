@@ -1,16 +1,21 @@
-.Index {
-  text-align: center;
+.index {
+  display: flex;
+  height: 100%;
+}
 
-  .welcomeMessage {
-    text-transform: uppercase;
-    font-family: "Futura Next DemiBold", serif;
-    font-size: 18px;
-    margin-top: calc(100vh * .17);
-  }
+.content {
+  margin: auto;
+  padding: 60px 30px;
+}
 
-  .welcomeMessageBig {
-    margin-top: 10px;
-    font-size: 36px;
-    display: block;
-  }
+.welcome {
+  text-transform: uppercase;
+  font-family: TindevBold;
+  font-size: 18px;
+}
+
+.welcomeBig {
+  display: block;
+  margin-top: 10px;
+  font-size: 36px;
 }

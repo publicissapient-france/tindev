@@ -1,11 +1,11 @@
 // Based on: https://codesandbox.io/s/fduch?file=/src/index.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import { animated, to as interpolate, useSprings } from 'react-spring';
-import { useState } from 'react';
 import { useDrag } from 'react-use-gesture';
-import './Deck.scss';
+
 import { Card } from '../Card/Card';
+import deckStyles from './Deck.module.scss';
 
 const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
@@ -30,12 +30,12 @@ export const Deck = () => {
   const [springs, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from() }));
 
   const bind = useDrag(({
-                          args: [index],
-                          down,
-                          movement: [mx],
-                          direction: [xDir],
-                          velocity
-                        }) => {
+    args: [index],
+    down,
+    movement: [mx],
+    direction: [xDir],
+    velocity
+  }) => {
     const trigger = velocity > .2;
     const dir = xDir < 0 ? -1 : 1;
     let isGone = gone.has(index);
@@ -79,14 +79,14 @@ export const Deck = () => {
   });
 
   return (
-    <div className="Deck">
+    <div className={deckStyles.deck}>
       {springs.map(({ x, y, rot, scale }, i) => (
         <animated.div key={i} style={{ transform: interpolate([x, y], (x1, y1) => `translate3d(${x1}px,${y1}px,0)`) }}>
           <animated.div {...bind(i)}
-                        style={{
-                          transform: interpolate([rot, scale], trans)
-                        }}>
-            <Card onYes={yesBind(i)} onNo={noBind(i)}/>
+            style={{
+              transform: interpolate([rot, scale], trans)
+            }}>
+            <Card onYes={yesBind(i)} onNo={noBind(i)} />
           </animated.div>
         </animated.div>
       ))}

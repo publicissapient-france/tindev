@@ -1,28 +1,25 @@
-.Card {
-  width: 75vw;
-  height: 60vh;
-  margin: auto;
+.card {
+  padding: 4vh 8vw;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  text-align: center;
   background-color: #FFFFFF;
+  text-align: center;
   will-change: transform;
+}
 
-  .image {
-    margin-top: 6vh;
-    height: 35vh;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+.image {
+  height: 35vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
-  .description {
-    margin-top: 2vh;
-    text-transform: uppercase;
-  }
+.description {
+  margin-top: 2vh;
+  text-transform: uppercase;
+}
 
-  .actions {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 4vh;
-  }
+.actions {
+  margin-top: 4vh;
+  display: flex;
+  justify-content: space-between;
 }

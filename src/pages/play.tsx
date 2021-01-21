@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header } from '../components/Header/Header';
+
 import { Deck } from '../components/Deck/Deck';
+import { Header } from '../components/Header/Header';
+import Layout from '../components/Layout/Layout';
 
 export default function () {
   return (
-    <>
-      <Header background={false}/>
-      <Deck/>
-    </>
+    <Layout header={<Header background={false} />}>
+      <Deck />
+    </Layout>
   );
 }

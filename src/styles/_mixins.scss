@@ -1,0 +1,13 @@
+@mixin respond-to($size) {
+  @if $size == desktop {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media (max-width: ($breakpoint - 1px)) {
+      @content;
+    }
+  } @else {
+    @error "Invalid size `#{$size}` for mixin `respond-to`.";
+  }
+}

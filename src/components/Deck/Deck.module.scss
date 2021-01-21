@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.deck {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  > div {
+    position: absolute;
+    width: 100%;
+    top: $header-height-mobile;
+    height: calc(100% - #{$header-height-mobile});
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include respond-to(desktop) {
+    > div {
+      top: $header-height-desktop;
+      height: calc(100% - #{$header-height-desktop});
+    }
+  }
+}

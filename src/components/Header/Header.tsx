@@ -1,12 +1,17 @@
-import React from 'react';
-import styles from './Header.module.scss';
-import logoWhite from '../../images/logo-white.svg';
-import logoBlack from '../../images/logo-black.svg';
+import React, { FunctionComponent } from 'react';
 
-export const Header = ({ background }: { background: boolean }) =>
-  <header className={`${styles.header} ${background ? styles.headerAlt : ''}`}>
+import logoBlack from '../../images/logo-black.svg';
+import logoWhite from '../../images/logo-white.svg';
+import styles from './Header.module.scss';
+
+export interface HeaderProps{
+  withBackground?: boolean;
+}
+
+export const Header: FunctionComponent<HeaderProps> = ({ withBackground = false }) =>
+  <header className={`${styles.header} ${withBackground ? styles.headerAlt : ''}`}>
     <div className={styles.container}>
-      <img src={background ? logoWhite : logoBlack} alt='logo'/>
+      <img src={withBackground ? logoWhite : logoBlack} alt='logo'/>
       <div className={styles.tagline}>Be the next match</div>
     </div>
   </header>;

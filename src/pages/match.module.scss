@@ -4,25 +4,13 @@
 }
 
 .message {
+  margin-top: -15px;
   font-family: TindevBold;
   font-size: 18px;
   text-transform: uppercase;
-  margin-top: -15px;
 
-  span {
-    font-size: 48px;
+  .messageBig {
     display: block;
+    font-size: 48px;
   }
-}
-
-.heart {
-}
-
-.match-bottom {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 25vh;
-  background: url("../images/match-bottom.svg") no-repeat;
-  background-size: cover;
 }

@@ -1,18 +1,21 @@
-import React from 'react';
-import yes from '../../images/yes.svg';
-import no from '../../images/no.svg';
-import actionStyles from './Action.module.scss';
+import React, { FunctionComponent } from 'react';
+
+import noImg from '../../images/no.svg';
+import yesImg from '../../images/yes.svg';
+import styles from './Action.module.scss';
 
 export enum ActionType {
   YES,
   NO
 }
 
-type Props = { type: ActionType };
+export interface ActionProps {
+  type: ActionType;
+}
 
-export const Action = ({ type }: Props) => (
-  <button className={actionStyles.Action}>
-    {type === ActionType.YES && <img className={actionStyles.yes} src={yes} alt="oui"/>}
-    {type === ActionType.NO && <img className={actionStyles.no} src={no} alt="non"/>}
+export const Action: FunctionComponent<ActionProps> = ({ type }) => (
+  <button className={styles.Action}>
+    {type === ActionType.YES && <img className={styles.yes} src={yesImg} alt="oui" />}
+    {type === ActionType.NO && <img className={styles.no} src={noImg} alt="non" />}
   </button>
 );

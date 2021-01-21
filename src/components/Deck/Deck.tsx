@@ -1,6 +1,6 @@
 // Based on: https://codesandbox.io/s/fduch?file=/src/index.js
 
-import React, { useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { animated, to as interpolate, useSprings } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 
@@ -24,7 +24,7 @@ const cards = [
   {}
 ];
 
-export const Deck = () => {
+export const Deck: FunctionComponent = () => {
   const [gone] = useState(() => new Set());
 
   const [springs, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from() }));

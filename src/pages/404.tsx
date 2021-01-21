@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import { navigate } from 'gatsby';
-import * as React from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 
-export default function NotFoundPage() {
+const NotFoundPage: React.FunctionComponent = () => {
   useEffect(() => {
     navigate('/'); // redirecting to home page
   }, []);
@@ -10,4 +9,6 @@ export default function NotFoundPage() {
   return (
     <h1>(404) NotFound Page</h1>
   );
-}
+};
+
+export default NotFoundPage;

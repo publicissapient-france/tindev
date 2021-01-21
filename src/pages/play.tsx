@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import { Deck } from '../components/Deck/Deck';
+import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
-import Layout from '../components/Layout/Layout';
+import { Layout } from '../components/Layout/Layout';
+import { Wave } from '../components/Wave/Wave';
 
-export default function () {
-  return (
-    <Layout header={<Header background={false} />}>
-      <Deck />
-    </Layout>
-  );
-}
+const PlayPage: FunctionComponent = () => (
+  <Layout
+    header={<Header withBackground={false} />}
+    footer={<Footer withBackground />}
+  >
+    <Wave />
+    <Deck />
+  </Layout>
+);
 
-// <div className={styles.playBottom}/>
-// <Footer/>
+export default PlayPage;

@@ -1,7 +1,7 @@
-@import "../../styles/colors";
+@import "../../styles/variables";
 
 .Button {
-  background-color: $primary;
+  background-color: $primary-color;
   padding: 0;
   border: none;
   color: #FFF;
@@ -9,11 +9,11 @@
   height: 47px;
   margin-top: 50px;
   text-transform: uppercase;
-  font-family: "Futura Next DemiBold", serif;
+  font-family: TindevBold;
   border-radius: 47px;
 
   &:active, &:hover, &:focus {
-    background-color: darken($primary, 5%);
+    background-color: darken($primary-color, 5%);
     outline: none;
   }
 }

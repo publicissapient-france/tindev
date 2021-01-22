@@ -4,29 +4,22 @@ import React, { FunctionComponent, useState } from 'react';
 import { animated, to as interpolate, useSprings } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 
+import { Answer, DataItem } from '../../data/data.model';
 import { Card } from '../Card/Card';
-import deckStyles from './Deck.module.scss';
+import styles from './Deck.module.scss';
 
 const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 const trans = (r: number, s: number) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
 
-const cards = [
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {}
-];
+export interface DeckProps {
+  data: DataItem[];
+  onAnswer?: Answer;
+}
 
-export const Deck: FunctionComponent = () => {
+export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
+  const [cards] = useState(() => [...Array(data.length)].map(() => {}));
   const [gone] = useState(() => new Set());
-
   const [springs, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from() }));
 
   const bind = useDrag(({
@@ -43,6 +36,7 @@ export const Deck: FunctionComponent = () => {
       return;
     }
     if (!down && trigger) {
+      onAnswer?.(data[index], dir === 1);
       gone.add(index);
     }
     set(i => {
@@ -57,6 +51,7 @@ export const Deck: FunctionComponent = () => {
 
   const swipeOut = (index: number, dir: number) => (i: number) => {
     if (index !== i) return;
+    onAnswer?.(data[index], dir === 1);
     gone.add(index);
     const x = (200 + window.innerWidth) * dir;
     const rot = 30;
@@ -79,14 +74,14 @@ export const Deck: FunctionComponent = () => {
   });
 
   return (
-    <div className={deckStyles.deck}>
+    <div className={styles.deck}>
       {springs.map(({ x, y, rot, scale }, i) => (
         <animated.div key={i} style={{ transform: interpolate([x, y], (x1, y1) => `translate3d(${x1}px,${y1}px,0)`) }}>
           <animated.div {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans)
             }}>
-            <Card onYes={yesBind(i)} onNo={noBind(i)} />
+            <Card data={data[i]} onYes={yesBind(i)} onNo={noBind(i)} />
           </animated.div>
         </animated.div>
       ))}

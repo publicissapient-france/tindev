@@ -14,9 +14,10 @@ export default (data: any): DataItem[] => {
   const important: DataItem[] = [];
   const fun: DataItem[] = [];
 
-  data.forEach((item: any) =>
-    (item.important ? important : fun).push(mapItem(item))
-  );
+  data.forEach((item: any) => {
+    const mappedItem = mapItem(item);
+    return (mappedItem.important ? important : fun).push(mappedItem);
+  });
 
   return shuffle([
     ...shuffle(important).slice(0, importantSize),

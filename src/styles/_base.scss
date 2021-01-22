@@ -3,6 +3,7 @@ html, body {
 }
 
 body {
+  overscroll-behavior: none;
   overflow: auto;
   margin: 0;
   font-family: Tindev;

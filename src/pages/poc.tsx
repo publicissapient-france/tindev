@@ -1,6 +1,6 @@
 import React from "react";
 
-import Data from "../data/data";
+import { Data } from "../data/data";
 
 import Playground from '../components/Playground/Playground';
 

@@ -1,18 +1,27 @@
-import * as React from 'react';
-import effectImg from '../images/effect.svg';
-import heartImg from '../images/heart.svg';
-import matchStyles from './match.module.scss';
-import { Header } from '../components/Header/Header';
+import React, { FunctionComponent } from 'react';
 
-const Match = () => (
-  <>
-    <Header background={false}/>
-    <div className={matchStyles.match}>
-      <img src={effectImg} alt=""/>
-      <p className={matchStyles.message}>it's a <span>match</span></p>
-      <img className={matchStyles.heart} src={heartImg} alt="coeur"/>
+import { Footer } from '../components/Footer/Footer';
+import { Header } from '../components/Header/Header';
+import { Layout } from '../components/Layout/Layout';
+import { Wave } from '../components/Wave/Wave';
+import heartImg from '../images/heart.svg';
+import shineImg from '../images/shine.svg';
+import styles from './match.module.scss';
+
+const Match: FunctionComponent = () => (
+  <Layout
+    header={<Header />}
+    footer={<Footer withBackground />}
+  >
+    <Wave isSmall />
+    <div className={styles.match}>
+      <img src={shineImg} alt="" />
+      <p className={styles.message}>
+        it's a <span className={styles.messageBig}>match</span>
+      </p>
+      <img src={heartImg} alt="coeur" />
     </div>
-  </>
+  </Layout>
 );
 
 export default Match;

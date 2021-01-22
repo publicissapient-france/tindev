@@ -1,16 +1,14 @@
-// Based on: https://codesandbox.io/s/fduch?file=/src/index.js
-
 import React, { FunctionComponent, useState } from 'react';
-import { animated, to as interpolate, useSprings } from 'react-spring';
-import { useDrag } from 'react-use-gesture';
+import { animated, interpolate, useSprings } from 'react-spring';
+import { useGesture } from 'react-use-gesture';
 
 import { Answer, DataItem } from '../../data/data.model';
 import { Card } from '../Card/Card';
 import styles from './Deck.module.scss';
 
-const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
+const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
-const trans = (r: number, s: number) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
+const trans = (r, s) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
 
 export interface DeckProps {
   data: DataItem[];
@@ -18,20 +16,15 @@ export interface DeckProps {
 }
 
 export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
-  const [cards] = useState(() => [...Array(data.length)].map(() => {}));
+  const [cards] = useState(() => [...Array(data.length)].map(() => ({})));
   const [gone] = useState(() => new Set());
-  const [springs, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from() }));
 
-  const bind = useDrag(({
-    args: [index],
-    down,
-    movement: [mx],
-    direction: [xDir],
-    velocity
-  }) => {
+  const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from() }));
+
+  const bind = useGesture(({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
     const trigger = velocity > .2;
     const dir = xDir < 0 ? -1 : 1;
-    let isGone = gone.has(index);
+    const isGone = gone.has(index);
     if (isGone) {
       return;
     }
@@ -41,15 +34,15 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     }
     set(i => {
       if (index !== i) return;
-      isGone = gone.has(index);
-      const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0;
-      const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0);
+      const isGone = gone.has(index);
+      const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0;
+      const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
       const scale = down ? 1.1 : 1;
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } };
     });
-  }, { filterTaps: true });
+  });
 
-  const swipeOut = (index: number, dir: number) => (i: number) => {
+  const swipeOut = (index: number, dir: number) => i => {
     if (index !== i) return;
     onAnswer?.(data[index], dir === 1);
     gone.add(index);
@@ -59,15 +52,15 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     return { x, rot, scale, delay: undefined, config: { friction: 50, tension: 200 } };
   };
 
-  const isOnClick = (index: number, down: boolean, velocity: number) => !gone.has(index) && down && velocity === 0;
+  const isOnClick = (index, down: boolean, velocity: number) => !gone.has(index) && down && velocity === 0;
 
-  const yesBind = useDrag(({ args: [index], down, velocity }) => {
+  const yesBind = useGesture(({ args: [index], down, velocity }) => {
     if (isOnClick(index, down, velocity)) {
       set(swipeOut(index, 1));
     }
   });
 
-  const noBind = useDrag(({ args: [index], down, velocity }) => {
+  const noBind = useGesture(({ args: [index], down, velocity }) => {
     if (isOnClick(index, down, velocity)) {
       set(swipeOut(index, -1));
     }
@@ -75,8 +68,8 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
 
   return (
     <div className={styles.deck}>
-      {springs.map(({ x, y, rot, scale }, i) => (
-        <animated.div key={i} style={{ transform: interpolate([x, y], (x1, y1) => `translate3d(${x1}px,${y1}px,0)`) }}>
+      {props.map(({ x, y, rot, scale }, i) => (
+        <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
           <animated.div {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans)

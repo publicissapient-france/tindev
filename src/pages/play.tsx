@@ -10,9 +10,11 @@ import { dataQuery } from '../data/data';
 import { Answer, DataItem } from '../data/data.model';
 import buildDataset from '../data/utils/buildDataset';
 
-const goodAnswers = 5;
-const badAnswers = 5;
+const goodAnswers = 6;
+const badAnswers = Number.MAX_SAFE_INTEGER;
 
+// TODO: this temporary code alows you to debug the App at runtime.
+// Don't forget to remove it before going live...
 const debug = (good: number, bad: number, answer: boolean, item: DataItem) => {
   console.log(
     `${good} / ${bad}`,

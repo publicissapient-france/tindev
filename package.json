@@ -27,8 +27,8 @@
     "react-deck-swiper": "^1.0.9",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "react-spring": "^9.0.0-rc.3",
-    "react-use-gesture": "^9.0.0",
+    "react-spring": "9.0.0-beta.3",
+    "react-use-gesture": "5.0.0",
     "sass": "^1.32.4"
   }
 }

@@ -6,9 +6,9 @@ import { Answer, DataItem } from '../../data/data.model';
 import { Card } from '../Card/Card';
 import styles from './Deck.module.scss';
 
-const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
+const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
-const trans = (r, s) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
+const trans = (r: number, s: number) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
 
 export interface DeckProps {
   data: DataItem[];
@@ -32,7 +32,10 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
       onAnswer?.(data[index], dir === 1);
       gone.add(index);
     }
-    set(i => {
+    // Note: TS compiler says that the function provided to `set` is not valid.
+    // But actually, everything works fine.
+    // It might be a missing typing...
+    set((i: number) => {
       if (index !== i) return;
       const isGone = gone.has(index);
       const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0;
@@ -42,7 +45,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     });
   });
 
-  const swipeOut = (index: number, dir: number) => i => {
+  const swipeOut = ((index: number, dir: number) => (i: number) => {
     if (index !== i) return;
     onAnswer?.(data[index], dir === 1);
     gone.add(index);
@@ -50,9 +53,9 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     const rot = 30;
     const scale = 1.1;
     return { x, rot, scale, delay: undefined, config: { friction: 50, tension: 200 } };
-  };
+  });
 
-  const isOnClick = (index, down: boolean, velocity: number) => !gone.has(index) && down && velocity === 0;
+  const isOnClick = (index: number, down: boolean | undefined, velocity: number) => !gone.has(index) && down && velocity === 0;
 
   const yesBind = useGesture(({ args: [index], down, velocity }) => {
     if (isOnClick(index, down, velocity)) {
@@ -66,10 +69,13 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     }
   });
 
+  // WARNING: Don't use a `<div>` as wrapping element!
+  // The CSS class `.deck` is simply not present when reloading the page!
+  // For no reason, it works fine when using another element like `<section>`.
   return (
-    <div className={styles.deck}>
+    <section className={styles.deck}>
       {props.map(({ x, y, rot, scale }, i) => (
-        <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+        <animated.div key={i} style={{ transform: interpolate([x, y], (x: number, y: number) => `translate3d(${x}px,${y}px,0)`) }}>
           <animated.div {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans)
@@ -78,6 +84,6 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
           </animated.div>
         </animated.div>
       ))}
-    </div>
+    </section>
   );
 };

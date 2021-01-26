@@ -4,4 +4,4 @@ export interface DataItem {
   response: boolean;
 }
 
-export type Answer = (item: DataItem, answer: boolean) => void;
+export type Answer = (item: DataItem, answer: boolean, isLast: boolean) => void;

@@ -10,14 +10,13 @@ import { dataQuery } from '../data/data';
 import { Answer, DataItem } from '../data/data.model';
 import buildDataset from '../data/utils/buildDataset';
 
-const goodAnswers = 6;
-const badAnswers = Number.MAX_SAFE_INTEGER;
+const EXPECTED_COUNT = 6;
 
 // TODO: this temporary code alows you to debug the App at runtime.
 // Don't forget to remove it before going live...
-const debug = (good: number, bad: number, answer: boolean, item: DataItem) => {
+const debug = (good: number, answer: boolean, item: DataItem) => {
   console.log(
-    `${good} / ${bad}`,
+    good,
     item.important ? 'IMPORTANT.' : 'FUN.',
     answer === item.response ? 'Good.' : 'Bad.',
     item.question
@@ -25,31 +24,24 @@ const debug = (good: number, bad: number, answer: boolean, item: DataItem) => {
 };
 
 const PlayPage: FunctionComponent = () => {
-  const [good, increaseGood] = useState(0);
-  const [bad, increaseBad] = useState(0);
+  const [count, setCount] = useState(0);
+  const [finish, setFinish] = useState(false);
 
-  const onAnswer: Answer = (item, answer) => {
-    if (!item.important) {
-      debug(good, bad, answer, item);
-      return;
-    }
-    if (item.response === answer) {
-      if (good + 1 < goodAnswers) {
-        increaseGood(good + 1);
-      } else {
-        setTimeout(() => navigate('/match'), 500);
-      }
-      debug(good + 1, bad, answer, item);
+  if (count >= EXPECTED_COUNT) {
+    setTimeout(() => navigate('/match'), 500);
+  } else if (finish) {
+    setTimeout(() => navigate('/unmatch'), 500);
+  }
+
+  const onAnswer: Answer = (item, answer, isLast) => {
+    if (item.important && item.response === answer) {
+      setCount(count + 1);
+      debug(count + 1, answer, item);
     } else {
-      if (bad + 1 < badAnswers) {
-        increaseBad(bad + 1);
-      } else {
-        setTimeout(() => {
-          alert('You freaking me!');
-          navigate('/'); // TODO: Create page for loosers...
-        }, 500);
-      }
-      debug(good, bad + 1, answer, item);
+      debug(count, answer, item);
+    }
+    if (isLast) {
+      setFinish(true);
     }
   };
 

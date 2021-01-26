@@ -29,7 +29,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
       return;
     }
     if (!down && trigger) {
-      onAnswer?.(data[index], dir === 1);
+      onAnswer?.(data[index], dir === 1, index === 0);
       gone.add(index);
     }
     // Note: TS compiler says that the function provided to `set` is not valid.
@@ -47,7 +47,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
 
   const swipeOut = ((index: number, dir: number) => (i: number) => {
     if (index !== i) return;
-    onAnswer?.(data[index], dir === 1);
+    onAnswer?.(data[index], dir === 1, index === 0);
     gone.add(index);
     const x = (200 + window.innerWidth) * dir;
     const rot = 30;

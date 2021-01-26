@@ -1,37 +1,111 @@
 PHRASE,IMPORTANT++,BONNE REPONSE
-La qualité sans compromis !,OUI,❤
-Data Scientist love Python,OUI,❤
 Les polos violets,NON,❤
-Les tisanes au houblon,NON,❤
-"Etre agile, ce n'est pas faire le grand écart ",OUI,❤
-Cycle en V,OUI,❌
-Le pair programming c'est une perte de temps,OUI,❌
-Tester c'est douter !,OUI,❌
-Mobile first,NON,❤
-Storybook ne sert à rien,OUI,❌
-Design system,OUI,❤
-TypeScript pour le typage,OUI,❤
-Vive le Serverless,OUI,❤
-Oui à l'UI as Code,OUI,❤
-SASS over CSS,OUI,❤
-Automatiser les tests fonctionnels,OUI,❤
-"Des fois, il est bon de mocker",OUI,❤
-La programmation réactive !,OUI,❤
-La programmation fonctionnelle !,OUI,❤
-NetBeans l'IDE du futur,NON,❌
-Ecologie !,NON,❤
 Gérôme Egron,OUI,❤
-En route pour Devoxx,OUI,❤
+Tu veux qu'on regarde ensemble ?,OUI,❤
+Je déjeune en travaillant,NON,❌
+Je fais + de 60h par semaine,OUI,❌
+J'aime me complexifier la vie avec les outils Microsoft,NON,❤
+"Slack, c'est vraiment cool !",NON,❤
+Data Scientist love Python.,OUI,❤
+Storybook ne sert à rien.,OUI,❌
+TypeScript pour le typage.,OUI,❤
+Vive le Serverless !,OUI,❤
+SASS over CSS.,OUI,❤
+"Parfois, il est bon de mocker.",OUI,❤
+La programmation réactive !,OUI,❤
+NetBeans l'IDE du futur !,NON,❌
 DRY,OUI,❤
+Nano c'est trop beau !,NON,❌
+Emacs c'est le max.,NON,❌
+On premise c'est moins cher que du cloud.,OUI,❌
+KISS,OUI,❤
+Le RUN c'est l'équipe support niveau 1 qui s'en occupe.,OUI,❌
+D&D,NON,❤
+Les fonctions au curry.,NON,❤
+La qualité c'est sans compromis !,OUI,❤
+Les tisanes au houblon,NON,❤
+"Etre agile, ce n'est pas faire le grand écart.",OUI,❤
+Ma méthode de projet préférée ? Le cycle en V.,OUI,❌
+Le pair programming c'est une perte de temps.,OUI,❌
+Tester c'est douter !,OUI,❌
+Mobile first !,NON,❤
+Design system !,OUI,❤
+Oui à l'UI as Code !,OUI,❤
+Automatiser les tests fonctionnels.,OUI,❤
+La programmation fonctionnelle !,NON,❤
+Le numérique responsable (GreenIT) !,NON,❤
+En route pour Devoxx !,NON,❤
 Une estimation est avant tout précise.,OUI,❌
-Expert après un Hello World,NON,❌
-J'aime que mon code soit SOLID,OUI,❤
+Expert après un Hello World.,NON,❌
+J'aime que mon code soit SOLID.,OUI,❤
 "« Espaces ou tabulations », c'est fondamental.",NON,❌
 "100% de couverture de code, sinon rien.",OUI,❌
-L'équipe ? Oui je crois qu'on est plusieurs sur le projet.,OUI,❌
-T'as fait un ticket ?,NON,❌
-"Le nouveau galère, je vais aller pairer avec lui. ",OUI,❤
+"L'équipe ? Pas important, j'avance seul(e).",OUI,❌
+"""Tu as fait un ticket ?""",NON,❌
+Le nouvel équipier est en difficulté ? Je vais aller pairer avec lui. ,OUI,❤
 J'allume mes serveurs seulement quand c'est nécessaire.,OUI,❤
-Tu veux qu'on regarde ensemble ?,OUI,❤
 La revue de code est un défouloir.,OUI,❌
-Partage de la connaissance,OUI,❤
+Partage de la connaissance !,OUI,❤
+Je ne fais jamais de refactoring.,OUI,❌
+Commenter tout mon code.,OUI,❌
+Un POC validé peut partir en prod.,OUI,❌
+Vim c'est sublime !,NON,❤
+"J'ai la Covid, je viens quand même c'est rien.",NON,❌
+Je prends sur mon temps de travail pour faire de la veille techno,OUI,❤
+Toujours partant pour un after work !,NON,❤
+Mon métier ? DevOps.,OUI,❌
+Mon infra ? C'est du code aussi !,OUI,❤
+On se fait un petit boardgame à la pause du midi ?,NON,❤
+Communiquer au sein de son équipe et avec le métier.,OUI,❤
+Prendre les décisions collectivement.,OUI,❤
+"Je suis une star, je prends les bonnes décisions moi-même.",NON,❌
+Les rétrospectives ça ne sert qu'à râler.,OUI,❌
+Ah ! J'ai trouvé ! Mais je le garde pour moi...,OUI,❌
+"Le Cloud je n'y ai jamais cru, de toute façon ce sont les GAFAM...",OUI,❌
+Les meetups sont une perte de temps.,NON,❌
+Pas besoin de notions d'Ops pour faire une bonne application.,OUI,❌
+Seules les écoles d'ingénieur font de bons tech.,OUI,❌
+"Partager avec la communauté, pourquoi faire ?",OUI,❌
+J'attends de voir les avantages pour moi avant de contribuer à quelque chose.,OUI,❌
+Un feedback négatif est toujours utile.,OUI,❤
+"Le remote c'est bien, au moins on est tranquille tout seul dans son coin.",NON,❌
+La sécurité c'est qu'une affaire d'experts.,OUI,❌
+Vive les dark modes !,NON,❤
+Jenkins c'est trop cool !,NON,❌
+PHP c'est le meilleur langage du monde !,NON,❌
+"Les conteneurs, c'est Docker ou rien.",NON,❌
+Le dress code c'est primordial.,NON,❌
+"Le plus important, c'est mon TJM.",OUI,❌
+Mettre des techno beta en prod ? Même pas peur !,OUI,❤
+"Plus un code est commenté, mieux c'est !",OUI,❌
+"Le ""no code"" c'est le futur du dev'.",OUI,❌
+Ce qui est bien avec Jenkins c'est qu'on peut tout faire en click bouton.,OUI,❌
+Mon manager ? C'est le Tech Lead sur mon projet qui me dit quoi faire.,OUI,❌
+Le Deep Learning c'est juste pour la R&D.,OUI,❌
+"Le Data Scientist aussi, il code ! Il ne fait pas que de l'algo !",OUI,❤
+J'hésite pas à dire non à mon commercial,OUI,❤
+J'implique les fonctions supports ont leur place dans les projets internes même si c'est pas leur boulot.,OUI,❤
+"J'adore faire de la patisserie, j'en fais souvent à mes collègues.",NON,❤
+Utiliser que des technos hype c'est la base !,NON,❌
+"La hype oui, mais je teste avant de la suivre.",OUI,❤
+Avoir une spec complète au premier jour du projet.,OUI,❌
+Java c'est mort !,OUI,❌
+Quelque soit le métier finalement c'est du code.,OUI,❌
+J'aime avoir raison.,OUI,❌
+J'aime être challengé(e).,OUI,❤
+J'aime challenger les autres.,OUI,❤
+Je pense qu'il est important d'avoir réponse à tout.,NON,❌
+Un micro service sinon rien !,NON,❌
+Ne pas être la personne la plus intelligente dans la pièce.,NON,❤
+Exposer mon travail à la critique.,OUI,❤
+"Savoir dire ""je ne sais pas"".",OUI,❤
+"""ça fonctionne sur ma machine"".",OUI,❌
+"""Là y'a une erreur mais c'est normal.""",OUI,❌
+DDD,OUI,❤
+Je préfère réécrire le code à ma façon.,OUI,❌
+Coder c'est douter.,NON,❤
+C'est du code crade mais c'est temporaire.,OUI,❌
+Je préfère des solutions que je connais déjà.,OUI,❌
+Coder c'est trouver une nouvelle solution aux mêmes problèmes.,OUI,❤
+Dans le doute ne modifie rien.,OUI,❌
+Refactoriser c'est bien seulement si on a le temps.,OUI,❌

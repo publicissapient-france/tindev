@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 
 import logoBlack from '../../images/logo-black.svg';
@@ -10,8 +11,8 @@ export interface HeaderProps{
 
 export const Header: FunctionComponent<HeaderProps> = ({ withBackground = false }) =>
   <header className={`${styles.header} ${withBackground ? styles.headerAlt : ''}`}>
-    <div className={styles.container}>
+    <Link to={'/'} className={styles.container}>
       <img src={withBackground ? logoWhite : logoBlack} alt='logo'/>
       <div className={styles.tagline}>Be the next match</div>
-    </div>
+    </Link>
   </header>;

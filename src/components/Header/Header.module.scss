@@ -2,12 +2,14 @@
 @import "../../styles/mixins";
 
 .header {
-  padding-bottom: 60px;
+  padding-bottom: 44px;
 }
 
 .container {
+  display: block;
   padding-top: 20px;
   text-align: center;
+  text-decoration: none;
 }
 
 .tagline {
@@ -33,11 +35,12 @@
 }
 
 @include respond-to(desktop) {
-  .header {
-    padding-bottom: 40px;
-  }
-
   .headerAlt {
     background-color: $primary-color;
   }
+
+  .container {
+    padding-top: 36px;
+  }
+
 }

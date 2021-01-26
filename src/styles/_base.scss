@@ -1,13 +1,10 @@
-html, body {
-  height: 100vh;
-}
-
 body {
   overscroll-behavior: none;
   overflow: auto;
+  height: 100vh;
   margin: 0;
   font-family: Tindev;
-  font-size: 14px;
+  font-size: $font-size;
   user-select: none;
   background: url("./images/background.png") center top repeat;
 }

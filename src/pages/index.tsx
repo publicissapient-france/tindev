@@ -15,9 +15,7 @@ const IndexPage: FunctionComponent = () =>
           Découvrez si vous êtes<br />
           notre prochain <span className={indexStyles.welcomeBig}>match !</span>
         </div>
-        <Link to={'/play'}>
-          <Button>c'est parti !</Button>
-        </Link>
+        <Button linkTo={'/play'}>c'est parti !</Button>
       </div>
     </div>
   </Layout>

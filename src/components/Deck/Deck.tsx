@@ -16,7 +16,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
   const [cards] = useState(() => [...Array(data.length)].map(() => ({})));
   const [gone] = useState(() => new Set());
 
-  const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from() }));
+  const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) }));
 
   const bind = useGesture(({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
     const trigger = velocity > .2;

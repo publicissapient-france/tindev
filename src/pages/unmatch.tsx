@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 
 import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
@@ -11,16 +11,17 @@ import unicornImg from '../images/unicorn.png';
 import styles from './unmatch.module.scss';
 
 const items = [
-  { subtitle: ['...voici un chaton'], img: catImg },
-  { subtitle: ['...voici une licorne'], img: unicornImg }
+  { text: ['...voici un chaton'], image: catImg },
+  { text: ['...voici une licorne'], image: unicornImg }
 ];
 
 const Unmatch: FunctionComponent = () => {
-  const [index] = useState(Math.round(Math.random() * (items.length - 1)));
-  const item = items[index];
+  const [index, setIndex] = useState<number>();
+  const item = index !== undefined ? items[index] : undefined;
 
-  // Temporary: debug state...
-  console.log(items, index, item);
+  useEffect(() => {
+    setIndex(Math.round(Math.random() * (items.length - 1)));
+  }, []);
 
   return (
     <Layout
@@ -28,12 +29,12 @@ const Unmatch: FunctionComponent = () => {
       footer={<Footer withBackground />}
     >
       <Wave isSmall />
-      <Center>
-        <Heading title={['Pas de match pour vous...']} subtitle={item.subtitle} subtitleSize="sm" />
+      {item ? <Center>
+        <Heading title={['Pas de match pour vous...']} subtitle={item.text} subtitleSize="sm" />
         <div className={styles.image}>
-          <img src={item.img} />
+          <img src={item.image} />
         </div>
-      </Center>
+      </Center> : null}
     </Layout>
   );
 }

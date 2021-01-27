@@ -10,7 +10,7 @@ import { dataQuery } from '../services/data';
 import { Answer, DataItem } from '../services/data.model';
 import buildDataset from '../services/utils/buildDataset';
 
-const EXPECTED_COUNT = 6;
+const EXPECTED_COUNT = 7;
 
 // TODO: this temporary code alows you to debug the App at runtime.
 // Don't forget to remove it before going live...

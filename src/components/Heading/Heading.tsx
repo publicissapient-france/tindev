@@ -9,7 +9,12 @@ export interface HeadingProps {
 }
 
 export const Heading: FunctionComponent<HeadingProps> = ({ title, subtitle, subtitleSize = 'md' }) => {
-  const getText = (data: string[]) => data.map((text, index) => index < data.length - 1 ? <>{text}<br /></> : text);
+  const getText = (data: string[]) =>
+    data.map((text, index) =>
+      index < data.length - 1 ?
+        <span key={index}>{text}<br /></span> :
+        text
+    );
 
   const subtitleClass = subtitleSize === 'sm' ? styles.subtitleSmall : subtitleSize === 'lg' ? styles.subtitleLarge : '';
 

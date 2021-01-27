@@ -1,16 +1,17 @@
-.Action {
+.action {
   width: 80px;
   height: 80px;
-  border: 1px solid #D8D8D8;
-  background-color: #FFF;
+  border: 1px solid #d8d8d8;
+  background-color: #fff;
   border-radius: 80px;
 
-  .yes {
-    margin-top: 8px;
-  }
-
-  &:active, &:focus {
+  &:active,
+  &:focus {
     outline: none;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
   }
+}
+
+.yes {
+  margin-top: 8px;
 }

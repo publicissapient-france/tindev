@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from 'react';
 
+import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
+import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import heartImg from '../images/heart.svg';
@@ -14,13 +16,11 @@ const Match: FunctionComponent = () => (
     footer={<Footer withBackground />}
   >
     <Wave isSmall />
-    <div className={styles.match}>
-      <img src={shineImg} alt="" />
-      <p className={styles.message}>
-        it's a <span className={styles.messageBig}>match</span>
-      </p>
+    <Center>
+      <img src={shineImg} alt="" className={styles.shine} />
+      <Heading title={['It\'s a']} subtitle={['match']} subtitleSize="lg" />
       <img src={heartImg} alt="coeur" />
-    </div>
+    </Center>
   </Layout>
 );
 

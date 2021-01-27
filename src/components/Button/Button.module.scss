@@ -25,6 +25,9 @@
   }
 
   @include respond-to(desktop) {
+    margin: 0 auto;
+    width: 500px;
+    max-width: 100%;
     padding: 25px;
     font-size: 22px;
   }

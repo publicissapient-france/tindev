@@ -27,10 +27,8 @@ const PlayPage: FunctionComponent = () => {
   const [count, setCount] = useState(0);
   const [finish, setFinish] = useState(false);
 
-  if (count >= EXPECTED_COUNT) {
-    setTimeout(() => navigate('/match'), 500);
-  } else if (finish) {
-    setTimeout(() => navigate('/unmatch'), 500);
+  if (finish) {
+    setTimeout(() => navigate(count >= EXPECTED_COUNT ? '/match' : '/unmatch'), 400);
   }
 
   const onAnswer: Answer = (item, answer, isLast) => {

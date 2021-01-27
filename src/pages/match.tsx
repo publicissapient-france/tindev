@@ -12,7 +12,7 @@ import shineImg from '../images/shine.svg';
 import styles from './match.module.scss';
 
 const Match: FunctionComponent = () => {
-  setTimeout(() => navigate('/join'), 2000);
+  setTimeout(() => navigate('/join'), 3000);
 
   return (
     <Layout

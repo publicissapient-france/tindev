@@ -1,8 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .card {
   box-sizing: border-box;
-  min-width: 320px;
-  max-width: 480px;
-  padding: 4vh 8vw;
+  width: 336px;
+  padding: 44px 30px 36px 30px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   background-color: #FFFFFF;
@@ -11,18 +13,24 @@
 }
 
 .image {
-  height: 35vh;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: 200px;
 }
 
 .description {
-  margin-top: 2vh;
+  display: flex;
+  margin: 38px 0 40px 0;
+  min-height: 54px;
+  line-height: 18px;
+  font-size: 14px;
   text-transform: uppercase;
+
+  > * {
+    margin: auto;
+  }
 }
 
 .actions {
-  margin-top: 4vh;
   display: flex;
   justify-content: space-between;
+  padding: 0 16px;
 }

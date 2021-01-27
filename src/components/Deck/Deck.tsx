@@ -6,7 +6,7 @@ import { Answer, DataItem } from '../../data/data.model';
 import { Card } from '../Card/Card';
 import styles from './Deck.module.scss';
 
-const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 50 });
+const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -5 + Math.random() * 10, delay: i * 50 });
 const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 const trans = (r: number, s: number) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
 

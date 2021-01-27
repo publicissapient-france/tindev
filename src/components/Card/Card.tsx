@@ -15,8 +15,10 @@ export interface CardProps {
 
 export const Card: FunctionComponent<CardProps> = ({ data, onYes, onNo }) => (
   <div className={styles.card}>
-    <div className={styles.image} style={{ backgroundImage: `url(${image})` }} />
-    <p className={styles.description}>{data.question}</p>
+    <img className={styles.image} src={image} />
+    <p className={styles.description}>
+      <span>{data.question}</span>
+    </p>
     <div className={styles.actions}>
       <animated.div {...onNo}>
         <Action type={ActionType.NO} />

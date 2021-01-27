@@ -1,7 +1,7 @@
 import React from 'react';
 import { direction, Swipeable } from 'react-deck-swiper';
 
-import { DataItem } from '../../data/data.model';
+import { DataItem } from '../../services/data.model';
 
 const container = {
   marginTop: "96px",

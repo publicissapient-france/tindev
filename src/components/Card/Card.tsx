@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { animated } from 'react-spring';
 import { ReactEventHandlers } from 'react-use-gesture/dist/types';
 
-import { DataItem } from '../../data/data.model';
+import { DataItem } from '../../services/data.model';
 import image from '../../images/card-image.svg';
 import { Action, ActionType } from '../Action/Action';
 import styles from './Card.module.scss';

@@ -6,9 +6,9 @@ import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
-import { dataQuery } from '../data/data';
-import { Answer, DataItem } from '../data/data.model';
-import buildDataset from '../data/utils/buildDataset';
+import { dataQuery } from '../services/data';
+import { Answer, DataItem } from '../services/data.model';
+import buildDataset from '../services/utils/buildDataset';
 
 const EXPECTED_COUNT = 6;
 

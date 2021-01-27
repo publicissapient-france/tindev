@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { animated, interpolate, useSprings } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 
-import { Answer, DataItem } from '../../data/data.model';
+import { Answer, DataItem } from '../../services/data.model';
 import { Card } from '../Card/Card';
 import styles from './Deck.module.scss';
 

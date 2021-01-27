@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 
 import { Center } from '../components/Center/Center';
@@ -10,18 +11,22 @@ import heartImg from '../images/heart.svg';
 import shineImg from '../images/shine.svg';
 import styles from './match.module.scss';
 
-const Match: FunctionComponent = () => (
-  <Layout
-    header={<Header />}
-    footer={<Footer withBackground />}
-  >
-    <Wave isSmall />
-    <Center>
-      <img src={shineImg} alt="" className={styles.shine} />
-      <Heading title={['It\'s a']} subtitle={['match']} subtitleSize="lg" />
-      <img src={heartImg} alt="coeur" />
-    </Center>
-  </Layout>
-);
+const Match: FunctionComponent = () => {
+  setTimeout(() => navigate('/join'), 2000);
+
+  return (
+    <Layout
+      header={<Header />}
+      footer={<Footer withBackground />}
+    >
+      <Wave isSmall />
+      <Center>
+        <img src={shineImg} alt="" className={styles.shine} />
+        <Heading title={['It\'s a']} subtitle={['match']} subtitleSize="lg" />
+        <img src={heartImg} alt="coeur" />
+      </Center>
+    </Layout>
+  );
+}
 
 export default Match;

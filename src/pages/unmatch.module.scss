@@ -1,11 +1,8 @@
-.match {
-  margin-top: 3vh;
-  text-align: center;
-}
+.image {
+  display: flex;
+  height: 290px;
 
-.message {
-  margin-top: -15px;
-  font-family: TindevBold;
-  font-size: 18px;
-  text-transform: uppercase;
+  > img {
+    margin: auto;
+  }
 }

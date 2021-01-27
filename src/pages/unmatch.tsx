@@ -15,7 +15,7 @@ const items = [
   { subtitle: ['...voici une licorne'], img: unicornImg }
 ];
 
-const Match: FunctionComponent = () => {
+const Unmatch: FunctionComponent = () => {
   const index = Math.round(Math.random() * (items.length - 1));
   const item = items[index];
 
@@ -35,4 +35,4 @@ const Match: FunctionComponent = () => {
   );
 }
 
-export default Match;
+export default Unmatch;

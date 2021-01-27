@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
@@ -16,7 +16,7 @@ const items = [
 ];
 
 const Unmatch: FunctionComponent = () => {
-  const index = Math.round(Math.random() * (items.length - 1));
+  const [index] = useState(Math.round(Math.random() * (items.length - 1)));
   const item = items[index];
 
   return (

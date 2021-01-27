@@ -5,7 +5,7 @@ export const to = (i: number) => ({
   y: -i,
   scale: 1,
   rot: -angle + Math.random() * angle * 2,
-  delay: i * 50,
+  // delay: i * 50, // This animation does NOT work on mobile device...
 });
 
 export const from = () => ({

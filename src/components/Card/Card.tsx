@@ -15,7 +15,7 @@ export interface CardProps {
 
 export const Card: FunctionComponent<CardProps> = ({ data, onYes, onNo }) => (
   <div className={styles.card}>
-    <img className={styles.image} src={image} />
+    <img className={styles.image} src={image} draggable={false} />
     <p className={styles.description}>
       <span>{data.question}</span>
     </p>

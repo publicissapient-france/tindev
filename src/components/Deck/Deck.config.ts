@@ -1,4 +1,4 @@
-const angle = window.matchMedia("(min-width: 480px)").matches ? 5 : 0;
+const angle = typeof window !== `undefined` && window.matchMedia("(min-width: 480px)").matches ? 5 : 0;
 
 export const to = (i: number) => ({
   x: 0,

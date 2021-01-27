@@ -11,7 +11,7 @@ import unicornImg from '../images/unicorn.png';
 import styles from './unmatch.module.scss';
 
 const items = [
-  { subtitle: ['...voici un calin de chaton'], img: catImg },
+  { subtitle: ['...voici un chaton'], img: catImg },
   { subtitle: ['...voici une licorne'], img: unicornImg }
 ];
 

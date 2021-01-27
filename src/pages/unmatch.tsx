@@ -19,6 +19,9 @@ const Unmatch: FunctionComponent = () => {
   const [index] = useState(Math.round(Math.random() * (items.length - 1)));
   const item = items[index];
 
+  // Temporary: debug state...
+  console.log(items, index, item);
+
   return (
     <Layout
       header={<Header />}

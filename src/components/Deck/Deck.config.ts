@@ -1,4 +1,4 @@
-const angle = typeof window !== `undefined` && window.matchMedia("(min-width: 480px)").matches ? 5 : 0;
+const angle = 5;
 
 const rotRandom = Array(100).fill(0).map(() => -angle + Math.random() * angle * 2);
 

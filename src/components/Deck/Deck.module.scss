@@ -12,7 +12,7 @@
     position: absolute;
     width: 100%;
     top: $header-height-mobile;
-    height: calc(100% - #{$header-height-mobile});
+    bottom: $footer-height-mobile;
     will-change: transform;
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@
   @include respond-to(desktop) {
     > div {
       top: $header-height-desktop;
-      height: calc(100% - #{$header-height-desktop});
+      bottom: $footer-height-desktop;
     }
   }
 }

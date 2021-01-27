@@ -4,11 +4,8 @@ import { useGesture } from 'react-use-gesture';
 
 import { Answer, DataItem } from '../../services/data.model';
 import { Card } from '../Card/Card';
+import { from, to, trans } from './Deck.config';
 import styles from './Deck.module.scss';
-
-const to = (i: number) => ({ x: 0, y: i * -4, scale: 1, rot: -5 + Math.random() * 10, delay: i * 50 });
-const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
-const trans = (r: number, s: number) => `rotateY(${r / 20}deg) rotateZ(${r}deg) scale(${s})`;
 
 export interface DeckProps {
   data: DataItem[];

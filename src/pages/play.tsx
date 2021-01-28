@@ -7,22 +7,11 @@ import { Header } from '../components/Header/Header';
 import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import { dataQuery } from '../services/data';
-import { Answer, DataItem } from '../services/data.model';
+import { Answer } from '../services/data.model';
 import { authorizeJoin } from '../services/security';
 import buildDataset from '../services/utils/buildDataset';
 
-const EXPECTED_COUNT = 7;
-
-// TODO: this temporary code alows you to debug the App at runtime.
-// Don't forget to remove it before going live...
-const debug = (good: number, answer: boolean, item: DataItem) => {
-  console.log(
-    good,
-    item.important ? 'IMPORTANT.' : 'FUN.',
-    answer === item.response ? 'Good.' : 'Bad.',
-    item.question
-  );
-};
+const EXPECTED_COUNT = 8;
 
 const PlayPage: FunctionComponent = () => {
   const [count, setCount] = useState(0);
@@ -39,9 +28,6 @@ const PlayPage: FunctionComponent = () => {
   const onAnswer: Answer = (item, answer, isLast) => {
     if (item.important && item.response === answer) {
       setCount(count + 1);
-      debug(count + 1, answer, item);
-    } else {
-      debug(count, answer, item);
     }
     if (isLast) {
       setFinish(true);

@@ -5,6 +5,7 @@ import { Deck } from '../components/Deck/Deck';
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { Layout } from '../components/Layout/Layout';
+import { Match } from '../components/Match/Match';
 import { Wave } from '../components/Wave/Wave';
 import { dataQuery } from '../services/data';
 import { Answer, DataItem } from '../services/data.model';
@@ -26,9 +27,16 @@ const debug = (good: number, answer: boolean, item: DataItem) => {
 const PlayPage: FunctionComponent = () => {
   const [count, setCount] = useState(0);
   const [finish, setFinish] = useState(false);
+  const [match, setMatch] = useState(false);
 
   if (finish) {
-    setTimeout(() => navigate(count >= EXPECTED_COUNT ? '/match' : '/nomatch'), 400);
+    setTimeout(() => {
+      if (count >= EXPECTED_COUNT) {
+        setMatch(true);
+      } else {
+        navigate('/nomatch');
+      }
+    }, 500);
   }
 
   const onAnswer: Answer = (item, answer, isLast) => {
@@ -56,8 +64,8 @@ const PlayPage: FunctionComponent = () => {
       header={<Header withBackground={false} />}
       footer={<Footer withBackground />}
     >
-      <Wave />
-      {deckWithData}
+      <Wave isSmall={finish} />
+      {!match ? deckWithData : <Match />}
     </Layout>
   );
 };

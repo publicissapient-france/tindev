@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import darkPsImage from '../../images/publicis-sapient.svg';
-import lightPsImage from '../../images/publicis-sapient-light.svg';
+import darkPsImage from '../../images/ps-black.svg';
+import lightPsImage from '../../images/ps-white.svg';
 import styles from './Footer.module.scss';
 
 export interface FooterProps {

@@ -3,7 +3,7 @@ import { animated } from 'react-spring';
 import { ReactEventHandlers } from 'react-use-gesture/dist/types';
 
 import { DataItem } from '../../services/data.model';
-import image from '../../images/card-image.svg';
+import image from '../../images/cards/card-example.svg';
 import { Action, ActionType } from '../Action/Action';
 import styles from './Card.module.scss';
 

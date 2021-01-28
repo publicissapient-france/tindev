@@ -6,16 +6,16 @@ import { Header } from '../components/Header/Header';
 import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
-import catImg from '../images/cat.png';
-import unicornImg from '../images/unicorn.png';
-import styles from './unmatch.module.scss';
+import catImg from '../images/nomatch-cat.png';
+import unicornImg from '../images/nomatch-unicorn.png';
+import styles from './nomatch.module.scss';
 
 const items = [
   { text: ['...voici un chaton'], image: catImg },
   { text: ['...voici une licorne'], image: unicornImg }
 ];
 
-const Unmatch: FunctionComponent = () => {
+const NoMatch: FunctionComponent = () => {
   const [index, setIndex] = useState<number>();
   const item = index !== undefined ? items[index] : undefined;
 
@@ -39,4 +39,4 @@ const Unmatch: FunctionComponent = () => {
   );
 }
 
-export default Unmatch;
+export default NoMatch;

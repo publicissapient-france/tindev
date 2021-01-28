@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
-import noImg from '../../images/no.svg';
-import yesImg from '../../images/yes.svg';
+import noImg from '../../images/button-no.svg';
+import yesImg from '../../images/button-yes.svg';
 import styles from './Action.module.scss';
 
 export enum ActionType {

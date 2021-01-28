@@ -13,7 +13,7 @@ const IndexPage: FunctionComponent = () =>
     <Center>
       <Heading title={['Découvrez si vous êtes', 'notre prochain']} subtitle={['match !']} />
       <div className={styles.button}>
-        <Button linkTo={'/play'}>c'est parti !</Button>
+        <Button isResponsive linkTo={'/play'}>C'est parti !</Button>
       </div>
     </Center>
   </Layout>

@@ -8,6 +8,7 @@ import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import { dataQuery } from '../services/data';
 import { Answer, DataItem } from '../services/data.model';
+import { authorizeJoin } from '../services/security';
 import buildDataset from '../services/utils/buildDataset';
 
 const EXPECTED_COUNT = 7;
@@ -28,7 +29,11 @@ const PlayPage: FunctionComponent = () => {
   const [finish, setFinish] = useState(false);
 
   if (finish) {
-    setTimeout(() => navigate(count >= EXPECTED_COUNT ? '/match' : '/nomatch'), 500);
+    const isMatch = count >= EXPECTED_COUNT;
+    if (isMatch) {
+      authorizeJoin();
+    }
+    setTimeout(() => navigate(isMatch ? '/match' : '/nomatch'), 500);
   }
 
   const onAnswer: Answer = (item, answer, isLast) => {

@@ -3,12 +3,10 @@ import React, { FunctionComponent, useEffect } from 'react';
 
 const NotFoundPage: FunctionComponent = () => {
   useEffect(() => {
-    navigate('/'); // redirecting to home page
+    navigate('/');
   }, []);
 
-  return (
-    <h1>(404) NotFound Page</h1>
-  );
+  return <div />;
 };
 
 export default NotFoundPage;

@@ -1,0 +1,17 @@
+.join {
+  position: relative;
+  opacity: 0;
+  animation: JoinAnim 750ms ease-out 250ms forwards;
+  will-change: transform;
+}
+
+@keyframes JoinAnim {
+  from {
+    top: 100px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}

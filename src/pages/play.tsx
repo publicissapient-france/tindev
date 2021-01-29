@@ -10,6 +10,7 @@ import { Wave } from '../components/Wave/Wave';
 import { dataQuery } from '../services/data';
 import { Answer } from '../services/data.model';
 import { authorizeJoin } from '../services/security';
+import favicon from '../images/favicon.png';
 import buildDataset from '../services/utils/buildDataset';
 
 const EXPECTED_COUNT = 8;
@@ -46,7 +47,8 @@ const PlayPage: FunctionComponent = () => {
   return (
     <>
       <Helmet>
-        <title>TinDev</title>
+        <title>TinDev: Be the next match</title>
+        <link rel="icon" href={favicon} />
       </Helmet>
       <Layout
         header={<Header withBackground={false} />}

@@ -10,6 +10,7 @@ import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
 import slackImg from '../images/slack.svg';
 import { checkJoinOnce } from '../services/security';
+import favicon from '../images/favicon.png';
 import styles from './join.module.scss';
 
 const JoinPage: FunctionComponent = () => {
@@ -25,7 +26,8 @@ const JoinPage: FunctionComponent = () => {
   return join ? (
     <>
       <Helmet>
-        <title>TinDev</title>
+        <title>TinDev: Be the next match</title>
+        <link rel="icon" href={favicon} />
       </Helmet>
       <Layout header={<Header withBackground={true} />} footer={<Footer />}>
         <Center>

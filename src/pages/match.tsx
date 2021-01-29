@@ -10,6 +10,7 @@ import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import heartImg from '../images/heart.svg';
 import shineImg from '../images/shine.svg';
+import favicon from '../images/favicon.png';
 import styles from './match.module.scss';
 
 const Match: FunctionComponent = () => {
@@ -18,7 +19,8 @@ const Match: FunctionComponent = () => {
   return (
     <>
       <Helmet>
-        <title>TinDev</title>
+        <title>TinDev: Be the next match</title>
+        <link rel="icon" href={favicon} />
       </Helmet>
       <Layout
         header={<Header />}

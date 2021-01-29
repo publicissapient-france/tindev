@@ -9,6 +9,7 @@ import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import catImg from '../images/nomatch-cat.png';
 import unicornImg from '../images/nomatch-unicorn.png';
+import favicon from '../images/favicon.png';
 import styles from './nomatch.module.scss';
 
 const items = [
@@ -27,7 +28,8 @@ const NoMatch: FunctionComponent = () => {
   return (
     <>
       <Helmet>
-        <title>TinDev</title>
+        <title>TinDev: Be the next match</title>
+        <link rel="icon" href={favicon} />
       </Helmet>
       <Layout
         header={<Header />}

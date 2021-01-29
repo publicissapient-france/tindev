@@ -7,12 +7,14 @@ import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
+import favicon from '../images/favicon.png';
 import styles from './index.module.scss';
 
 const IndexPage: FunctionComponent = () =>
   <>
     <Helmet>
-      <title>TinDev</title>
+      <title>TinDev: Be the next match</title>
+      <link rel="icon" href={favicon} />
     </Helmet>
     <Layout header={<Header withBackground />} footer={<Footer />}>
       <Center>

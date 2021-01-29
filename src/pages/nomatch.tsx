@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import Helmet from 'react-helmet';
 
 import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
@@ -9,8 +8,8 @@ import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import catImg from '../images/nomatch-cat.png';
 import unicornImg from '../images/nomatch-unicorn.png';
-import favicon from '../images/favicon.png';
 import styles from './nomatch.module.scss';
+import { Page } from '../components/Page/Page';
 
 const items = [
   { text: ['...voici un chaton'], image: catImg },
@@ -26,11 +25,7 @@ const NoMatch: FunctionComponent = () => {
   }, []);
 
   return (
-    <>
-      <Helmet>
-        <title>TinDev: Be the next match</title>
-        <link rel="icon" href={favicon} />
-      </Helmet>
+    <Page>
       <Layout
         header={<Header />}
         footer={<Footer withBackground />}
@@ -43,7 +38,7 @@ const NoMatch: FunctionComponent = () => {
           </div>
         </Center> : null}
       </Layout>
-    </>
+    </Page>
   );
 }
 

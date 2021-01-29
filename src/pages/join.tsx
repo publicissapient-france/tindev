@@ -1,6 +1,5 @@
 import { navigate } from 'gatsby';
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import Helmet from 'react-helmet';
 
 import { Button } from '../components/Button/Button';
 import { Center } from '../components/Center/Center';
@@ -8,9 +7,9 @@ import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
+import { Page } from '../components/Page/Page';
 import slackImg from '../images/slack.svg';
 import { checkJoinOnce } from '../services/security';
-import favicon from '../images/favicon.png';
 import styles from './join.module.scss';
 
 const JoinPage: FunctionComponent = () => {
@@ -24,11 +23,7 @@ const JoinPage: FunctionComponent = () => {
   }, []);
 
   return join ? (
-    <>
-      <Helmet>
-        <title>TinDev: Be the next match</title>
-        <link rel="icon" href={favicon} />
-      </Helmet>
+    <Page>
       <Layout header={<Header withBackground={true} />} footer={<Footer />}>
         <Center>
           <div className={styles.join}>
@@ -37,7 +32,7 @@ const JoinPage: FunctionComponent = () => {
           </div>
         </Center>
       </Layout>
-    </>
+    </Page>
   ) : null;
 }
 

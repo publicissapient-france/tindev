@@ -3,13 +3,13 @@ import React, { FunctionComponent } from 'react';
 
 import styles from './Button.module.scss';
 
-export interface LinkProps {
+export interface ButtonProps {
   isResponsive?: boolean;
   icon?: any;
   linkTo?: string;
 }
 
-export const Button: FunctionComponent<LinkProps> = ({ isResponsive, icon, linkTo, children }) => {
+export const Button: FunctionComponent<ButtonProps> = ({ isResponsive, icon, linkTo, children }) => {
   const className = `${styles.button} ${isResponsive ? styles.responsive : ''} ${icon ? styles.icon : ''}`;
   console.log(className)
   const style = icon ? { backgroundImage: `url(${icon})` } : {};

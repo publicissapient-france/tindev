@@ -1,6 +1,5 @@
 import { navigate } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import Helmet from 'react-helmet';
 
 import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
@@ -10,18 +9,14 @@ import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
 import heartImg from '../images/heart.svg';
 import shineImg from '../images/shine.svg';
-import favicon from '../images/favicon.png';
 import styles from './match.module.scss';
+import { Page } from '../components/Page/Page';
 
 const Match: FunctionComponent = () => {
   setTimeout(() => navigate('/join'), 3000);
 
   return (
-    <>
-      <Helmet>
-        <title>TinDev: Be the next match</title>
-        <link rel="icon" href={favicon} />
-      </Helmet>
+    <Page>
       <Layout
         header={<Header />}
         footer={<Footer withBackground />}
@@ -33,7 +28,7 @@ const Match: FunctionComponent = () => {
           <img src={heartImg} alt="coeur" />
         </Center>
       </Layout>
-    </>
+    </Page>
   );
 }
 

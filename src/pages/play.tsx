@@ -1,16 +1,15 @@
 import { navigate, StaticQuery } from 'gatsby';
 import React, { FunctionComponent, useState } from 'react';
-import Helmet from 'react-helmet';
 
 import { Deck } from '../components/Deck/Deck';
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { Layout } from '../components/Layout/Layout';
+import { Page } from '../components/Page/Page';
 import { Wave } from '../components/Wave/Wave';
 import { dataQuery } from '../services/data';
 import { Answer } from '../services/data.model';
 import { authorizeJoin } from '../services/security';
-import favicon from '../images/favicon.png';
 import buildDataset from '../services/utils/buildDataset';
 
 const EXPECTED_COUNT = 8;
@@ -45,11 +44,7 @@ const PlayPage: FunctionComponent = () => {
   />;
 
   return (
-    <>
-      <Helmet>
-        <title>TinDev: Be the next match</title>
-        <link rel="icon" href={favicon} />
-      </Helmet>
+    <Page>
       <Layout
         header={<Header withBackground={false} />}
         footer={<Footer withBackground />}
@@ -57,7 +52,7 @@ const PlayPage: FunctionComponent = () => {
         <Wave isSmall={finish} />
         {deckWithData}
       </Layout>
-    </>
+    </Page>
   );
 };
 

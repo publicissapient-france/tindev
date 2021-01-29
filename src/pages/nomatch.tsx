@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 
 import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
@@ -24,18 +25,23 @@ const NoMatch: FunctionComponent = () => {
   }, []);
 
   return (
-    <Layout
-      header={<Header />}
-      footer={<Footer withBackground />}
-    >
-      <Wave isSmall />
-      {item ? <Center>
-        <Heading title={['Pas de match pour vous...']} subtitle={item.text} subtitleSize="sm" />
-        <div className={styles.image}>
-          <img src={item.image} />
-        </div>
-      </Center> : null}
-    </Layout>
+    <>
+      <Helmet>
+        <title>TinDev</title>
+      </Helmet>
+      <Layout
+        header={<Header />}
+        footer={<Footer withBackground />}
+      >
+        <Wave isSmall />
+        {item ? <Center>
+          <Heading title={['Pas de match pour vous...']} subtitle={item.text} subtitleSize="sm" />
+          <div className={styles.image}>
+            <img src={item.image} />
+          </div>
+        </Center> : null}
+      </Layout>
+    </>
   );
 }
 

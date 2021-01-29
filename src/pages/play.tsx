@@ -1,5 +1,6 @@
 import { navigate, StaticQuery } from 'gatsby';
 import React, { FunctionComponent, useState } from 'react';
+import Helmet from 'react-helmet';
 
 import { Deck } from '../components/Deck/Deck';
 import { Footer } from '../components/Footer/Footer';
@@ -43,13 +44,18 @@ const PlayPage: FunctionComponent = () => {
   />;
 
   return (
-    <Layout
-      header={<Header withBackground={false} />}
-      footer={<Footer withBackground />}
-    >
-      <Wave isSmall={finish} />
-      {deckWithData}
-    </Layout>
+    <>
+      <Helmet>
+        <title>TinDev</title>
+      </Helmet>
+      <Layout
+        header={<Header withBackground={false} />}
+        footer={<Footer withBackground />}
+      >
+        <Wave isSmall={finish} />
+        {deckWithData}
+      </Layout>
+    </>
   );
 };
 

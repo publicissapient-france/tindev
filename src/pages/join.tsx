@@ -1,5 +1,6 @@
 import { navigate } from 'gatsby';
 import React, { FunctionComponent, useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 
 import { Button } from '../components/Button/Button';
 import { Center } from '../components/Center/Center';
@@ -22,14 +23,19 @@ const JoinPage: FunctionComponent = () => {
   }, []);
 
   return join ? (
-    <Layout header={<Header withBackground={true} />} footer={<Footer />}>
-      <Center>
-        <div className={styles.join}>
-          <Heading title={['Faisons connaissance !']} />
-          <Button icon={slackImg}>Commencer à discuter</Button><br /><br />
-        </div>
-      </Center>
-    </Layout>
+    <>
+      <Helmet>
+        <title>TinDev</title>
+      </Helmet>
+      <Layout header={<Header withBackground={true} />} footer={<Footer />}>
+        <Center>
+          <div className={styles.join}>
+            <Heading title={['Faisons connaissance !']} />
+            <Button icon={slackImg}>Commencer à discuter</Button><br /><br />
+          </div>
+        </Center>
+      </Layout>
+    </>
   ) : null;
 }
 

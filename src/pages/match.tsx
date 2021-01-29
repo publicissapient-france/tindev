@@ -1,5 +1,6 @@
 import { navigate } from 'gatsby';
 import React, { FunctionComponent } from 'react';
+import Helmet from 'react-helmet';
 
 import { Center } from '../components/Center/Center';
 import { Footer } from '../components/Footer/Footer';
@@ -15,17 +16,22 @@ const Match: FunctionComponent = () => {
   setTimeout(() => navigate('/join'), 3000);
 
   return (
-    <Layout
-      header={<Header />}
-      footer={<Footer withBackground />}
-    >
-      <Wave isSmall />
-      <Center>
-        <img src={shineImg} alt="" className={styles.shine} />
-        <Heading title={['It\'s a']} subtitle={['match']} subtitleSize="lg" />
-        <img src={heartImg} alt="coeur" />
-      </Center>
-    </Layout>
+    <>
+      <Helmet>
+        <title>TinDev</title>
+      </Helmet>
+      <Layout
+        header={<Header />}
+        footer={<Footer withBackground />}
+      >
+        <Wave isSmall />
+        <Center>
+          <img src={shineImg} alt="" className={styles.shine} />
+          <Heading title={['It\'s a']} subtitle={['match']} subtitleSize="lg" />
+          <img src={heartImg} alt="coeur" />
+        </Center>
+      </Layout>
+    </>
   );
 }
 

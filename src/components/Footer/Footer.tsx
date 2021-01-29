@@ -9,6 +9,6 @@ export interface FooterProps {
 
 export const Footer: FunctionComponent<FooterProps> = ({ withBackground = false }) => (
   <div className={`${styles.footer} ${withBackground ? styles.footerAlt : ''}`}>
-    <img src={withBackground ? lightPsImage : darkPsImage} alt="logo publicis sapient"/>
+    <img src={withBackground ? lightPsImage : darkPsImage} height="28" alt="logo publicis sapient"/>
   </div>
 );

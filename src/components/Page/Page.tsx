@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import Helmet from 'react-helmet';
 
-import favicon from '../../images/favicon.webp';
-import openGraph from '../../images/open-graph-img.webp';
+import favicon from '../../images/favicon.png';
+import openGraph from '../../images/open-graph-img.png';
 
 export const Page: FunctionComponent = ({ children }) => (
   <>

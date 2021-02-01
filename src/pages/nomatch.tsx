@@ -6,8 +6,8 @@ import { Header } from '../components/Header/Header';
 import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
 import { Wave } from '../components/Wave/Wave';
-import catImg from '../images/nomatch-cat.png';
-import unicornImg from '../images/nomatch-unicorn.png';
+import catImg from '../images/nomatch-cat.webp';
+import unicornImg from '../images/nomatch-unicorn.webp';
 import styles from './nomatch.module.scss';
 import { Page } from '../components/Page/Page';
 

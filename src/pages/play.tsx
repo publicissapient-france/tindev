@@ -13,18 +13,29 @@ import buildDataset from '../services/utils/buildDataset';
 
 const EXPECTED_COUNT = 8;
 
-type Props = PageProps & {
+export const query = graphql`
+  query PlayQuery {
+    allDataCsv {
+      nodes {
+        question
+        important
+        response
+      }
+    }
+  }`;
+
+type PlayProps = PageProps & {
   data: {
     allDataCsv: {
-      nodes: []
+      nodes: DataItem[];
     }
   }
 }
 
-const PlayPage = ({ data }: Props) => {
+const PlayPage = ({ data }: PlayProps) => {
   const [count, setCount] = useState(0);
   const [finish, setFinish] = useState(false);
-  const [deck, setDeck] = useState([] as DataItem[]);
+  const [deck, setDeck] = useState<DataItem[]>([]);
 
   useEffect(() => {
     setDeck(buildDataset(data.allDataCsv.nodes));
@@ -59,16 +70,5 @@ const PlayPage = ({ data }: Props) => {
     </Page>
   );
 };
-
-export const query = graphql`
-  query PlayQuery {
-    allDataCsv {
-      nodes {
-        question
-        important
-        response
-      }
-    }
-  }`;
 
 export default PlayPage;

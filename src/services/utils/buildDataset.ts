@@ -15,7 +15,6 @@ const mapItem = ({ question, important, response }: any): DataItem => ({
 });
 
 export default (data: any): DataItem[] => {
-  console.log('hi');
   const fun: DataItem[] = [];
   const importantYes: DataItem[] = [];
   const importantNo: DataItem[] = [];

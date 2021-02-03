@@ -1,5 +1,5 @@
-import { navigate, StaticQuery } from 'gatsby';
-import React, { FunctionComponent, useState } from 'react';
+import { graphql, navigate, PageProps } from 'gatsby';
+import React, { useEffect, useState } from 'react';
 
 import { Deck } from '../components/Deck/Deck';
 import { Footer } from '../components/Footer/Footer';
@@ -7,16 +7,39 @@ import { Header } from '../components/Header/Header';
 import { Layout } from '../components/Layout/Layout';
 import { Page } from '../components/Page/Page';
 import { Wave } from '../components/Wave/Wave';
-import { dataQuery } from '../services/data';
-import { Answer } from '../services/data.model';
+import { Answer, DataItem } from '../services/data.model';
 import { authorizeJoin } from '../services/security';
 import buildDataset from '../services/utils/buildDataset';
 
 const EXPECTED_COUNT = 8;
 
-const PlayPage: FunctionComponent = () => {
+export const query = graphql`
+  query PlayQuery {
+    allDataCsv {
+      nodes {
+        question
+        important
+        response
+      }
+    }
+  }`;
+
+type PlayProps = PageProps & {
+  data: {
+    allDataCsv: {
+      nodes: DataItem[];
+    }
+  }
+}
+
+const PlayPage = ({ data }: PlayProps) => {
   const [count, setCount] = useState(0);
   const [finish, setFinish] = useState(false);
+  const [deck, setDeck] = useState<DataItem[]>([]);
+
+  useEffect(() => {
+    setDeck(buildDataset(data.allDataCsv.nodes));
+  }, []);
 
   if (finish) {
     const isMatch = count >= EXPECTED_COUNT;
@@ -35,22 +58,14 @@ const PlayPage: FunctionComponent = () => {
     }
   };
 
-  const deckWithData = <StaticQuery
-    query={dataQuery}
-    render={(allData) => {
-      const [data] = useState(() => buildDataset(allData.allDataCsv.nodes));
-      return <Deck data={data} onAnswer={onAnswer} />;
-    }}
-  />;
-
   return (
     <Page>
       <Layout
-        header={<Header withBackground={false} />}
-        footer={<Footer withBackground />}
+        header={<Header withBackground={false}/>}
+        footer={<Footer withBackground/>}
       >
-        <Wave isSmall={finish} />
-        {deckWithData}
+        <Wave isSmall={finish}/>
+        {deck.length > 0 && <Deck data={deck} onAnswer={onAnswer}/>}
       </Layout>
     </Page>
   );

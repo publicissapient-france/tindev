@@ -1,5 +1,5 @@
-import { DataItem } from "../data.model";
-import shuffle from "./shuffle";
+import { DataItem } from '../data.model';
+import shuffle from './shuffle';
 
 const importantSize = 10;
 const funSize = 10;

@@ -7,9 +7,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'G-M6FQ2Q8TEJ',
+        trackingIds: [
+          'G-M6FQ2Q8TEJ',
+        ],
+        pluginConfig: {
+          head: false
+        }
       },
     },
     'gatsby-plugin-sharp',
@@ -26,7 +31,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: "data",
+        name: 'data',
         path: `${__dirname}/src/services/`,
       },
     },
@@ -40,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-csv`,
       options: {
-        headers: ["question", "important", "response"],
+        headers: ['question', 'important', 'response'],
       },
     },
   ],

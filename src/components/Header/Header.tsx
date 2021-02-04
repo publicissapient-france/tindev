@@ -13,6 +13,5 @@ export const Header: FunctionComponent<HeaderProps> = ({ withBackground = false 
   <header className={`${styles.header} ${withBackground ? styles.headerAlt : ''}`}>
     <Link to={'/'} className={styles.container}>
       <img src={withBackground ? logoWhite : logoBlack} alt='logo' />
-      <div className={styles.tagline}>Be the next match</div>
     </Link>
   </header>;

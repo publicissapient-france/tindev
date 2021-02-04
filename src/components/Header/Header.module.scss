@@ -2,22 +2,14 @@
 @import "../../styles/mixins";
 
 .header {
-  padding-bottom: 44px;
+  padding-bottom: 40px;
 }
 
 .container {
   display: block;
-  padding-top: 20px;
+  padding-top: 13px;
   text-align: center;
   text-decoration: none;
-}
-
-.tagline {
-  margin-top: 8px;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #000000;
 }
 
 .headerAlt {
@@ -41,7 +33,7 @@
   }
 
   .container {
-    padding-top: 36px;
+    padding-top: 29px;
   }
 
 }

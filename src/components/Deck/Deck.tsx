@@ -15,6 +15,7 @@ export interface DeckProps {
 export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
   const [cards] = useState(() => [...Array(data.length)].map(() => ({})));
   const [gone] = useState(() => new Set());
+  const [hidden, setHidden] = useState<Record<number, boolean>>(() => ({}));
 
   const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) }));
 
@@ -28,6 +29,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     if (!down && trigger) {
       onAnswer?.(data[index], dir === 1, index === 0);
       gone.add(index);
+      setTimeout(() => setHidden({ ...hidden, [index]: true }), 500);
     }
     // Note: TS compiler says that the function provided to `set` is not valid.
     // But actually, everything works fine.
@@ -46,6 +48,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
     if (index !== i) return;
     onAnswer?.(data[index], dir === 1, index === 0);
     gone.add(index);
+    setTimeout(() => setHidden({ ...hidden, [index]: true }), 500);
     const x = (200 + window.innerWidth) * dir;
     const rot = 30;
     const scale = 1.1;
@@ -72,7 +75,7 @@ export const Deck: FunctionComponent<DeckProps> = ({ data, onAnswer }) => {
   return (
     <section className={styles.deck}>
       {props.map(({ x, y, rot, scale }, i) => (
-        <animated.div key={i} style={{ transform: interpolate([x, y], (x: number, y: number) => `translate3d(${x}px,${y}px,0)`) }}>
+        <animated.div key={i} className={hidden[i] ? styles.hidden : ''} style={{ transform: interpolate([x, y], (x: number, y: number) => `translate3d(${x}px,${y}px,0)`) }}>
           <animated.div {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans)

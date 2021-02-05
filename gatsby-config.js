@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-csv`,
       options: {
-        headers: ['question', 'important', 'response'],
+        headers: ['id', 'question', 'important', 'response'],
       },
     },
   ],

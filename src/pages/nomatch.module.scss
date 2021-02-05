@@ -3,6 +3,7 @@
 
   > img {
     margin: auto;
-    height: 290px;
+    max-height: 290px;
+    max-width: calc(100% - 60px);
   }
 }

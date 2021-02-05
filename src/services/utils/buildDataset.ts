@@ -8,10 +8,11 @@ if (importantSize % 2) {
   throw new Error('Expect "importantSize" should be an even number!');
 }
 
-const mapItem = ({ question, important, response }: any): DataItem => ({
+const mapItem = ({ id, question, important, response }: any): DataItem => ({
+  id,
   question,
-  important: important === "OUI",
-  response: response === "❤",
+  important: important === 'OUI',
+  response: response === '❤'
 });
 
 export default (data: any): DataItem[] => {
@@ -27,6 +28,6 @@ export default (data: any): DataItem[] => {
   return shuffle([
     ...shuffle(fun).slice(0, funSize),
     ...shuffle(importantYes).slice(0, importantSize / 2),
-    ...shuffle(importantNo).slice(0, importantSize / 2),
+    ...shuffle(importantNo).slice(0, importantSize / 2)
   ]);
 };

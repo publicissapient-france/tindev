@@ -13,7 +13,7 @@ import styles from './match.module.scss';
 import { Page } from '../components/Page/Page';
 
 const Match: FunctionComponent = () => {
-  setTimeout(() => navigate('/join'), 3000);
+  setTimeout(() => navigate('/join'), 2_000);
 
   return (
     <Page>

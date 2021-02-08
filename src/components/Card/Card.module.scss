@@ -36,3 +36,23 @@
   justify-content: space-between;
   padding: 0 16px;
 }
+
+// For small devices, we apply a size factor of: `0.833333`.
+@media (max-width: 479px) {
+  .card {
+    width: 280px;
+    padding: 36px 25px 30px 25px;
+  }
+
+  .image {
+    height: 166px;
+  }
+
+  .description {
+    margin: 32px 0 33px 0;
+  }
+
+  .actions {
+    padding: 0 13px;
+  }
+}

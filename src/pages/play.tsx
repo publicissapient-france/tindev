@@ -17,6 +17,7 @@ export const query = graphql`
   query PlayQuery {
     allDataCsv {
       nodes {
+        id
         question
         important
         response

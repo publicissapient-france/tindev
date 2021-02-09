@@ -8,6 +8,7 @@
   z-index: 1;
   bottom: 0;
   display: flex;
+  cursor: pointer;
 }
 
 .head {
@@ -28,4 +29,5 @@
   margin: auto;
   max-height: 98%;
   overflow: scroll;
+  cursor: default;
 }

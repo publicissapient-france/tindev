@@ -27,7 +27,7 @@ ID,PHRASE,IMPORTANT++,BONNE REPONSE
 42,Commenter tout mon code.,OUI,❌
 43,Un POC validé peut partir en prod.,OUI,❌
 44,Vim c'est sublime !,NON,❤
-45,"J'ai la Covid, je viens quand même c'est rien.",NON,❌
+45,"J'ai un rhume, je viens quand même c'est rien.",NON,❌
 46,Je prends sur mon temps de travail pour faire de la veille techno,OUI,❤
 47,Toujours partant pour un after work !,NON,❤
 48,Mon métier ? DevOps.,OUI,❌
@@ -59,7 +59,7 @@ ID,PHRASE,IMPORTANT++,BONNE REPONSE
 74,Ce qui est bien avec Jenkins c'est qu'on peut tout faire en click bouton.,OUI,❌
 75,Mon manager ? C'est le Tech Lead sur mon projet qui me dit quoi faire.,OUI,❌
 76,Le Deep Learning c'est juste pour la R&D.,OUI,❌
-77,"Le Data Scientist aussi, il code ! Il ne fait pas que de l'algo !",OUI,❤
+77,"Le Data Scientist aussi, il code ! Il ne fait pas que des stats !",OUI,❤
 78,J'hésite pas à dire non à mon commercial,OUI,❤
 79,J'implique les fonctions transverses qui ont leur place dans les projets internes même si c'est pas leur boulot.,OUI,❤
 80,"J'adore faire de la patisserie, j'en fais souvent à mes collègues.",NON,❤
@@ -73,7 +73,6 @@ ID,PHRASE,IMPORTANT++,BONNE REPONSE
 88,J'aime challenger les autres.,OUI,❤
 89,Je pense qu'il est important d'avoir réponse à tout.,NON,❌
 90,Un micro service sinon rien !,NON,❌
-91,Ne pas être la personne la plus intelligente dans la pièce.,NON,❤
 92,Exposer mon travail à la critique.,OUI,❤
 93,"Savoir dire ""je ne sais pas"".",OUI,❤
 94,"""ça fonctionne sur ma machine"".",OUI,❌
@@ -83,6 +82,5 @@ ID,PHRASE,IMPORTANT++,BONNE REPONSE
 98,Coder c'est douter.,NON,❤
 99,C'est du code crade mais c'est temporaire.,OUI,❌
 100,Je préfère des solutions que je connais déjà.,OUI,❌
-101,Coder c'est trouver une nouvelle solution aux mêmes problèmes.,OUI,❤
 102,Dans le doute ne modifie rien.,OUI,❌
 103,Refactoriser c'est bien seulement si on a le temps.,OUI,❌

@@ -31,6 +31,17 @@
   }
 }
 
+.mini {
+  padding: 7px 8px 5px 8px;
+  font-size: 8px;
+
+  &.icon {
+    background-position-x: 8px;
+    background-size: 20px;
+    padding-left: 36px;
+  }
+}
+
 .icon {
   padding-left: 70px;
 }

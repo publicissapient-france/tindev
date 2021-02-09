@@ -5,6 +5,10 @@
   margin-top: 40px;
 }
 
+.how {
+  margin-bottom: 60px;
+}
+
 @include respond-to(desktop) {
   .button {
     margin-top: 60px;

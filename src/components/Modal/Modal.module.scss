@@ -1,0 +1,33 @@
+.background {
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 0;
+  padding: 5% 24px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+  bottom: 0;
+  display: flex;
+}
+
+.head {
+  flex-grow: 1;
+}
+
+.foot {
+  flex-grow: 1;
+}
+
+.modal {
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px -4px rgba(0, 0, 0, .2);
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  cursor: default;
+  max-height: 98%;
+  overflow: scroll;
+}

@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 
-import waveImg from '../../images/wave.svg';
 import styles from './Wave.module.scss';
 
 export interface WaveProps {

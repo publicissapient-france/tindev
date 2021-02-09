@@ -8,14 +8,14 @@ import { Heading } from '../components/Heading/Heading';
 import { Layout } from '../components/Layout/Layout';
 import { Page } from '../components/Page/Page';
 import styles from './index.module.scss';
-import Info from '../images/info.svg';
+import infoImg from '../images/info.svg';
 
 const IndexPage: FunctionComponent = () =>
   <Page>
     <Layout header={<Header withBackground/>} footer={<Footer/>}>
       <Center>
         <div className={styles.how}>
-          <Button isMini icon={Info} linkTo="/how">Comment ça marche&nbsp;?</Button>
+          <Button isMini icon={infoImg} linkTo="/how">Comment ça marche&nbsp;?</Button>
         </div>
         <Heading title={['Découvrez si vous êtes', 'notre prochain']} subtitle={['match !']}/>
         <div className={styles.button}>

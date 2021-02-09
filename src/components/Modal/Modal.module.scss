@@ -1,33 +1,45 @@
 .background {
-  background-color: rgba(0, 0, 0, .5);
-  position: absolute;
+  z-index: 4;
+  position: fixed;
   top: 0;
-  padding: 5% 24px;
-  left: 0;
   right: 0;
-  z-index: 1;
   bottom: 0;
+  left: 0;
   display: flex;
+  background-color: rgba(0, 0, 0, .5);
   cursor: pointer;
 }
 
-.head {
-  flex-grow: 1;
-}
-
-.foot {
-  flex-grow: 1;
-}
-
 .modal {
-  text-align: center;
-  background-color: #ffffff;
+  margin: auto;
+  width: calc(100% - 56px);
+  max-width: 500px;
+  max-height: calc(100% - 56px);
+  overflow: scroll;
+  position: relative;
   box-shadow: 0 2px 8px -4px rgba(0, 0, 0, .2);
   border-radius: 15px;
-  max-width: 500px;
-  width: 100%;
-  margin: auto;
-  max-height: 98%;
-  overflow: scroll;
+  background-color: #ffffff;
+  text-align: center;
   cursor: default;
+}
+
+.close {
+  display: block;
+  margin: 8px auto;
+  line-height: 0;
+
+  img {
+    height: 24px;
+    width: 24px;
+    padding: 8px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background-color ease 200ms;
+
+    &:hover,
+    &:active {
+      background-color: #F1F1F1;
+    }
+  }
 }

@@ -56,3 +56,18 @@
     padding: 0 13px;
   }
 }
+
+// When the device height is small, let's reduce some sizes...
+@media (max-height: 639px) {
+  .card {
+    padding: 18px 25px 15px 25px;
+  }
+
+  .image {
+    height: 150px;
+  }
+
+  .description {
+    margin: 16px 0 15px 0;
+  }
+}

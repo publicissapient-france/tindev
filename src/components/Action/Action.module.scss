@@ -4,11 +4,16 @@
   border: 1px solid #d8d8d8;
   background-color: #fff;
   border-radius: 80px;
+  cursor: pointer;
 
   &:active,
   &:focus {
     outline: none;
     background-color: #fafafa;
+  }
+
+  &:hover {
+    background-color: darken(#fafafa, .2);
   }
 }
 

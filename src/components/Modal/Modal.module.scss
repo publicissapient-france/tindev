@@ -1,0 +1,45 @@
+.background {
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+.modal {
+  margin: auto;
+  width: calc(100% - 56px);
+  max-width: 500px;
+  max-height: calc(100% - 56px);
+  overflow: scroll;
+  position: relative;
+  box-shadow: 0 2px 8px -4px rgba(0, 0, 0, .2);
+  border-radius: 15px;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: default;
+}
+
+.close {
+  display: block;
+  margin: 8px auto;
+  line-height: 0;
+
+  img {
+    height: 24px;
+    width: 24px;
+    padding: 8px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background-color ease 200ms;
+
+    &:hover,
+    &:active {
+      background-color: #F1F1F1;
+    }
+  }
+}

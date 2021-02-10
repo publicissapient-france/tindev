@@ -1,0 +1,48 @@
+/*
+  <article class="modal-container modal-container--with-space">
+    <h1 class="modal-title">Qui sommes-nous ?</h1>
+    <p class="modal-paragraph">Publicis Sapient est le partenaire des transformations numériques.</p>
+  </article>
+  <footer class="modal-container">
+    <img class="modal-image modal-image--sm" src="..." />
+  </footer>
+*/
+
+.modal-container {
+  padding: 0 15px;
+}
+
+.modal-container--with-space {
+  padding-bottom: 15px;
+}
+
+.modal-title {
+  margin: 0 0 22px 0;
+  font-size: 18px;
+  font-family: TindevBold;
+  text-transform: uppercase;
+}
+
+.modal-paragraph {
+  margin: 0 0 22px 0;
+}
+
+.modal-link {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: #FFA1C3;
+  }
+}
+
+.modal-image {
+  display: block;
+  margin: 0 auto;
+  max-height: 50vh;
+  width: 100%;
+}
+
+.modal-image--sm {
+  width: 80%;
+}

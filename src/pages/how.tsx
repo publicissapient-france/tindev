@@ -6,11 +6,11 @@ import { Page } from '../components/Page/Page';
 import { Modal } from '../components/Modal/Modal';
 import How from '../images/how.svg';
 import styles from './how.module.scss';
-import {Layout} from "../components/Layout/Layout";
+import { Layout } from '../components/Layout/Layout';
 
 const HowPage: FunctionComponent = () =>
   <Page>
-    <Layout header={<Header withBackground/>} footer={<Footer/>} />
+    <Layout header={<Header withBackground/>} footer={<Footer/>}/>
     <Modal>
       <h1 className={styles.title}>
         Comment ça marche&nbsp;?

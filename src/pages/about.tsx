@@ -1,3 +1,4 @@
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React, {FunctionComponent} from 'react';
 
 import {Footer} from '../components/Footer/Footer';
@@ -31,7 +32,9 @@ const AboutPage: FunctionComponent = () =>
           nos 300 Sapient France accompagnent localement
           nos clients avec la force du réseau mondial de Sapient
           et le Power of One Publicis.<br/>
-          <a href="https://www.publicissapient.fr" className="modal-link">www.publicissapient.fr</a>
+          <OutboundLink target="_blank" href="https://www.publicissapient.fr" className="modal-link">
+            www.publicissapient.fr
+          </OutboundLink>
         </p>
         <p className="modal-paragraph">
           <Button isMini linkTo="https://blog.engineering.publicissapient.fr/">Visitez notre blog</Button>

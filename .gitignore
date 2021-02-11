@@ -4,3 +4,4 @@ node_modules
 public
 .firebase
 firebase-debug.log
+.DS_Store

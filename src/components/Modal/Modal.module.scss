@@ -12,21 +12,23 @@
 
 .modal {
   margin: auto;
-  width: calc(100% - 56px);
-  max-width: 500px;
-  max-height: calc(100% - 56px);
-  overflow: scroll;
+  overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 56px);
+  max-height: calc(100% - 56px);
+  max-width: 500px;
   box-shadow: 0 2px 8px -4px rgba(0, 0, 0, .2);
   border-radius: 15px;
   background-color: #ffffff;
   text-align: center;
-  cursor: default;
 }
 
 .close {
+  flex-shrink: 0;
   display: block;
-  margin: 8px auto;
+  padding: 8px 0;
   line-height: 0;
 
   img {
@@ -42,4 +44,9 @@
       background-color: #F1F1F1;
     }
   }
+}
+
+.content {
+  flex-grow: 1;
+  overflow: auto;
 }

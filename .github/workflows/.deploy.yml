@@ -21,3 +21,5 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GATSBY_URL: ${{ secrets.GATSBY_URL }}
+          GATSBY_SLACK_INVITATION: ${{ secrets.GATSBY_SLACK_INVITATION }}

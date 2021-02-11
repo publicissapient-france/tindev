@@ -9,11 +9,11 @@ export type ButtonProps = {
   icon?: any
   linkTo?: string
   isMini?: boolean
-  outboundLink?: boolean
+  isOutboundLink?: boolean
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
-                                                         outboundLink,
+                                                         isOutboundLink,
                                                          isMini,
                                                          isResponsive,
                                                          icon,
@@ -22,11 +22,11 @@ export const Button: FunctionComponent<ButtonProps> = ({
                                                        }) => {
   const className = `${styles.button} ${isResponsive ? styles.responsive : ''} ${icon ? styles.icon : ''} ${isMini ? styles.mini : ''}`;
   const style = icon ? { backgroundImage: `url(${icon})` } : {};
-  if (linkTo) {
-    if (outboundLink) {
-      return <OutboundLink className={className} style={style} href={linkTo}>{children}</OutboundLink>;
-    }
-    return <Link className={className} style={style} to={linkTo}>{children}</Link>;
+  if (!linkTo) {
+    return <button className={className} style={style}>{children}</button>;
   }
-  return <button className={className} style={style}>{children}</button>;
+  if (isOutboundLink) {
+    return <OutboundLink className={className} style={style} href={linkTo}>{children}</OutboundLink>;
+  }
+  return <Link className={className} style={style} to={linkTo}>{children}</Link>;
 };

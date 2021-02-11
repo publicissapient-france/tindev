@@ -28,7 +28,7 @@ const JoinPage: FunctionComponent = () => {
         <Center>
           <div className={styles.join}>
             <Heading title={['Faisons connaissance !']}/>
-            <Button outboundLink linkTo={process.env.GATSBY_SLACK_INVITATION} icon={slackImg}>
+            <Button isOutboundLink linkTo={process.env.GATSBY_SLACK_INVITATION} icon={slackImg}>
               Commencer à discuter
             </Button>
             <br/>

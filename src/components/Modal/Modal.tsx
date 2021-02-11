@@ -13,6 +13,6 @@ export const Modal: FunctionComponent<ModalProps> = ({ navigateTo = '/', childre
        onClick={(e) => (e.target === e.currentTarget) && navigate(navigateTo, { replace: true })}>
     <div className={styles.modal}>
       <Link className={styles.close} to={navigateTo} replace><img src={closeImg} alt="Fermer"/></Link>
-      {children}
+      <div className={styles.content}>{children}</div>
     </div>
   </div>;

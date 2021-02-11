@@ -24,16 +24,20 @@ const JoinPage: FunctionComponent = () => {
 
   return join ? (
     <Page>
-      <Layout header={<Header withBackground={true} />} footer={<Footer />}>
+      <Layout header={<Header withBackground={true}/>} footer={<Footer/>}>
         <Center>
           <div className={styles.join}>
-            <Heading title={['Faisons connaissance !']} />
-            <Button icon={slackImg}>Commencer à discuter</Button><br /><br />
+            <Heading title={['Faisons connaissance !']}/>
+            <Button outboundLink linkTo={process.env.GATSBY_SLACK_INVITATION} icon={slackImg}>
+              Commencer à discuter
+            </Button>
+            <br/>
+            <br/>
           </div>
         </Center>
       </Layout>
     </Page>
   ) : null;
-}
+};
 
 export default JoinPage;

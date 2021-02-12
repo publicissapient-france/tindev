@@ -3,30 +3,42 @@
 
 .footer {
   display: block;
+  position: relative;
+  overflow: hidden;
   padding: 12px 0;
-  line-height: 0;
   text-align: center;
-}
-
-.footerAlt {
-  background-color: $primary-color;
 }
 
 @include respond-to(desktop) {
   .footer {
-    padding: 19px 0;
+    padding-left: 19px;
+    padding-right: 19px;
   }
 }
 
+.footerBackground {
+  background-color: $primary-color;
+}
+
+.footerArrow {
+  padding-top: 52px;
+}
+
+.link {
+  line-height: 0;
+}
+
+$rotate: 90deg;
+
 .arrowContainer {
   position: absolute;
-  top: -40px;
+  top: 0;
   left: 50%;
   margin-left: 38px;
   opacity: 0;
   transform-origin: bottom left;
-  transform: rotate(90deg);
-  animation: ArrowAnim 0.25s ease-out .250s forwards;
+  transform: rotate($rotate);
+  animation: ArrowAnim 0.5s ease-out 0.25s forwards;
 }
 
 .arrowText {
@@ -43,7 +55,7 @@
 @keyframes ArrowAnim {
   from {
     opacity: 0;
-    transform: rotate(90deg);
+    transform: rotate($rotate);
   }
   to {
     opacity: 1;

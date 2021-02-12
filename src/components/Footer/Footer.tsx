@@ -11,12 +11,22 @@ export interface FooterProps {
   withArrow?: boolean;
 }
 
-export const Footer: FunctionComponent<FooterProps> = ({ withBackground = false, withArrow= false }) => (
-  <Link to="/about" className={`${styles.footer} ${withBackground ? styles.footerAlt : ''}`}>
-    {withArrow && (<div className={styles.arrowContainer}>
+export const Footer: FunctionComponent<FooterProps> = ({ withBackground = false, withArrow= false }) => {
+  const className = `${styles.footer} ${withBackground ? styles.footerBackground : ''} ${withArrow ? styles.footerArrow : ''}`;
+
+  const arrow = withArrow && (
+    <div className={styles.arrowContainer}>
       <div className={styles.arrowText}>Qui sommes-nous ?</div>
       <img className={styles.arrowImage} src={arrowImage} alt=""/>
-    </div>)}
-    <img src={withBackground ? lightPsImage : darkPsImage} height="28" alt="logo publicis sapient"/>
-  </Link>
-);
+    </div>
+  );
+
+  return (
+    <div className={className}>
+      <Link to="/about" className={styles.link}>
+        <img src={withBackground ? lightPsImage : darkPsImage} height="28" alt="logo publicis sapient"/>
+      </Link>
+      {arrow}
+    </div>
+  );
+}

@@ -2,6 +2,7 @@
 @import "../../styles/mixins";
 
 .footer {
+  display: block;
   padding: 12px 0;
   line-height: 0;
   text-align: center;
@@ -14,5 +15,38 @@
 @include respond-to(desktop) {
   .footer {
     padding: 19px 0;
+  }
+}
+
+.arrowContainer {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  margin-left: 38px;
+  opacity: 0;
+  transform-origin: bottom left;
+  transform: rotate(90deg);
+  animation: ArrowAnim 0.25s ease-out 2s forwards;
+}
+
+.arrowText {
+  line-height: 1.5em;
+  color: #888;
+}
+
+.arrowImage {
+  margin-left: -49px;
+  transform-origin: top right;
+  transform: rotate(8deg);
+}
+
+@keyframes ArrowAnim {
+  from {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
   }
 }

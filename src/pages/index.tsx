@@ -12,7 +12,7 @@ import infoImg from '../images/info.svg';
 
 const IndexPage: FunctionComponent = () =>
   <Page>
-    <Layout header={<Header withBackground/>} footer={<Footer/>}>
+    <Layout header={<Header withBackground/>} footer={<Footer withArrow />}>
       <Center>
         <div className={styles.how}>
           <Button isMini icon={infoImg} linkTo="/how">Comment ça marche&nbsp;?</Button>
